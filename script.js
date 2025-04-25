@@ -1,7 +1,3 @@
-
-
-
-
 const ingredients = {
   "Caesar Salad": {
     text: "Ingredients: Romaine Lettuce, Caesar Dressing, Croutons, Parmesan Cheese",
