@@ -1,5 +1,3 @@
-// amharic.js
-
 // Handle clicking on circular food image
 const foodImagesAmharic = document.querySelectorAll('.food-image');
 foodImagesAmharic.forEach(image => {
@@ -28,11 +26,13 @@ foodImagesAmharic.forEach(image => {
   });
 });
 
-// Handle clicking outside the image container
+// Handle clicking outside the image container and ingredients container
 document.body.addEventListener('click', function (event) {
   const isInsideImageContainer = event.target.closest('.image-container') || event.target.closest('.food-image');
+  const isInsideIngredientsContainer = event.target.closest('.ingredients-container'); // Check if inside ingredients container
 
-  if (!isInsideImageContainer) {
+  // Only trigger navigation if clicked outside image and ingredients container
+  if (!isInsideImageContainer && !isInsideIngredientsContainer) {
     const currentURL = window.location.href;
 
     if (currentURL.includes("indexamharic2.html")) {
