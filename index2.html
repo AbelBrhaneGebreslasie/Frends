@@ -62,6 +62,22 @@
       margin-bottom: 15px; /* Increased spacing for clarity */
     }
 
+
+    .back-to-home button {
+      background-color: white;
+      color: red;
+      font-size: 1.5rem;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .back-to-home button:hover {
+      background-color: #f2f2f2;
+    }
+
     /* Mobile responsiveness */
     @media (max-width: 600px) {
       h2 {
@@ -93,6 +109,11 @@
     <!-- Ingredients will be dynamically injected here -->
   </ul>
 
+  <!-- Red "Back to Home" Container -->
+  <div class="back-to-home">
+    <button onclick="goBackHome()">Back to Home</button>
+  </div>
+
   <script src="amharic.js"></script>
 
   <script>
@@ -123,12 +144,10 @@
       });
     }
 
-    // Redirect to index page when clicking outside the image or ingredients list
-    document.body.addEventListener('click', function(event) {
-      if (!event.target.closest('.image-container') && !event.target.closest('ul')) {
-        window.location.href = 'indexamharic.html'; // Redirect to the home page
-      }
-    });
+    // Function to go back to the home page
+    function goBackHome() {
+      window.location.href = 'index.html'; // Redirect to the home page
+    }
   </script>
 
 </body>
