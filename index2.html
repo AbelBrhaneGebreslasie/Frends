@@ -1,69 +1,135 @@
-  <!-- this is my index2.html -->
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Dish Detail</title>
-    <style>
-      body {
-        margin: 0;
-        height: 100vh;
-        background: linear-gradient(135deg, white, rgb(3, 189, 252));
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Arial, sans-serif;
-        cursor: pointer; /* Show a pointer cursor to indicate clickable area */
-      }
-  
-      .image-container {
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 20px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: default; /* Prevent cursor change over the image container */
-        margin-left: 20px; /* Margin on the left */
-        margin-right: 20px; /* Margin on the right */
-      }
-  
-      .image-container img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain; /* Ensures image is scaled and fits within the container */
-        border-radius: 20px;
-      }
-    </style>
-  </head>
-  <body>
-  
-    <div class="image-container">
-      <img id="dish-image" src="" alt="Food Image">
-    </div>
-    <script src="main.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dish Detail</title>
 
-    <script>
-      // Get the image URL from the URL query parameter
-      const params = new URLSearchParams(window.location.search);
-      const imageUrl = params.get('image');
-  
-      // Set the image source
-      if (imageUrl) {
-        document.getElementById('dish-image').src = imageUrl;
-      } else {
-        document.getElementById('dish-image').src = "https://via.placeholder.com/300";
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, white, rgb(3, 189, 252));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    /* Image container styling */
+    .image-container {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: default;
+      margin: 20px 10px;
+      width: 90%;
+      height: 400px; /* Fixed height for larger view */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    h2 {
+      margin-top: 0.1%;
+      font-size: 5vw;
+      color: #003366;
+      text-align: left;
+      width: 100%;
+      padding-left: 10%;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-top: 1%;
+      font-size: 2.6rem; /* Increased size for readability */
+      color: #000;
+      width: 90%;
+      padding-left: 8%;
+      text-align: left;
+    }
+
+    li {
+      margin-bottom: 15px; /* Increased spacing for clarity */
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.8rem;
       }
-  
-      // Add event listener to the body (outside the image container)
-      document.body.addEventListener('click', function(event) {
-        // Check if the click is outside the image container
-        if (!event.target.closest('.image-container')) {
-          window.location.href = 'index.html'; // Navigate back to index.html
-        }
+
+      ul {
+        font-size: 2rem; /* Adjusted size for mobile */
+      }
+
+      .image-container {
+        height: 250px;
+        width: calc(100% - 20px); /* Ensure full width minus margins */
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Image Container -->
+  <div class="image-container">
+    <img id="dish-image" src="" alt="Food Image">
+  </div>
+
+  <!-- Ingredients Header -->
+  <h2>Ingredients:</h2>
+  <ul id="ingredients-list">
+    <!-- Ingredients will be dynamically injected here -->
+  </ul>
+
+  <script src="amharic.js"></script>
+
+  <script>
+    // Map image URL to ingredients
+    const ingredientsData = {
+      "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
+      "https://images.unsplash.com/photo-1560807707-8cc7778e6627": ["Flour", "Milk", "Eggs", "Syrup"],
+      "https://via.placeholder.com/300": ["Ingredient 1", "Ingredient 2"]
+    };
+
+    // Get image URL from query parameters
+    const params = new URLSearchParams(window.location.search);
+    const imageUrl = params.get('image');
+
+    if (imageUrl) {
+      document.getElementById('dish-image').src = imageUrl;
+
+      // Get the ingredients based on the image URL
+      const ingredients = ingredientsData[imageUrl] || ["Ingredient 1", "Ingredient 2"];
+      const listContainer = document.getElementById('ingredients-list');
+      listContainer.innerHTML = ""; // Clear any existing content
+
+      ingredients.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        listContainer.appendChild(li);
       });
-    </script>
-  
-  </body>
-  </html>
+    }
+
+    // Redirect to index page when clicking outside the image or ingredients list
+    document.body.addEventListener('click', function(event) {
+      if (!event.target.closest('.image-container') && !event.target.closest('ul')) {
+        window.location.href = 'indexamharic.html'; // Redirect to the home page
+      }
+    });
+  </script>
+
+</body>
+</html>
