@@ -1,69 +1,69 @@
   <!-- this is my index2.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Dish Detail</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, white, rgb(3, 189, 252));
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      cursor: pointer; /* Show a pointer cursor to indicate clickable area */
-    }
-
-    .image-container {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 20px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: default; /* Prevent cursor change over the image container */
-      margin-left: 20px; /* Margin on the left */
-      margin-right: 20px; /* Margin on the right */
-    }
-
-    .image-container img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain; /* Ensures image is scaled and fits within the container */
-      border-radius: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="image-container">
-    <img id="dish-image" src="" alt="Food Image">
-  </div>
-
-  <script>
-    // Get the image URL from the URL query parameter
-    const params = new URLSearchParams(window.location.search);
-    const imageUrl = params.get('image');
-
-    // Set the image source
-    if (imageUrl) {
-      document.getElementById('dish-image').src = imageUrl;
-    } else {
-      document.getElementById('dish-image').src = "https://via.placeholder.com/300";
-    }
-
-    // Add event listener to the body (outside the image container)
-    document.body.addEventListener('click', function(event) {
-      // Check if the click is outside the image container
-      if (!event.target.closest('.image-container')) {
-        window.location.href = 'index.html'; // Navigate back to index.html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dish Detail</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, white, rgb(3, 189, 252));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        cursor: pointer; /* Show a pointer cursor to indicate clickable area */
       }
-    });
-  </script>
+  
+      .image-container {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: default; /* Prevent cursor change over the image container */
+        margin-left: 20px; /* Margin on the left */
+        margin-right: 20px; /* Margin on the right */
+      }
+  
+      .image-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Ensures image is scaled and fits within the container */
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <div class="image-container">
+      <img id="dish-image" src="" alt="Food Image">
+    </div>
+    <script src="main.js"></script>
 
-</body>
-</html>
-
+    <script>
+      // Get the image URL from the URL query parameter
+      const params = new URLSearchParams(window.location.search);
+      const imageUrl = params.get('image');
+  
+      // Set the image source
+      if (imageUrl) {
+        document.getElementById('dish-image').src = imageUrl;
+      } else {
+        document.getElementById('dish-image').src = "https://via.placeholder.com/300";
+      }
+  
+      // Add event listener to the body (outside the image container)
+      document.body.addEventListener('click', function(event) {
+        // Check if the click is outside the image container
+        if (!event.target.closest('.image-container')) {
+          window.location.href = 'index.html'; // Navigate back to index.html
+        }
+      });
+    </script>
+  
+  </body>
+  </html>
