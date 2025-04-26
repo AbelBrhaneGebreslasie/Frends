@@ -21,7 +21,7 @@
 
     .image-container {
       background: rgba(255, 255, 255, 0.9);
-      border-radius: 20px;
+      border-radius: 50%; /* Make the container circular */
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       overflow: hidden;
       display: flex;
@@ -29,16 +29,16 @@
       align-items: center;
       cursor: default;
       margin: 20px 10px;
-      width: 100%; /* Flexible width for responsiveness */
-      max-width: 1200px; /* Max width to prevent it from getting too large */
-      height: auto;
+      width: 300px; /* Increased size */
+      height: 300px; /* Increased size */
+      border: 5px solid white; /* White border */
     }
 
     .image-container img {
-      width: 100%; /* Responsive width */
-      height: auto; /* Maintain aspect ratio */
-      object-fit: cover; /* Ensure the image covers the area */
-      border-radius: 20px;
+      width: 100%; /* Make the image fill the container */
+      height: 100%; /* Ensure the image takes up the full height */
+      object-fit: cover; /* Ensure the image covers the area, cropped if necessary */
+      border-radius: 50%; /* Make the image circular as well */
     }
 
     h2 {
@@ -48,6 +48,51 @@
       text-align: left;
       width: 100%;
       padding-left: 10%;
+    }
+
+    /* Container for the ingredients list */
+    .ingredients-container {
+      position: relative; /* Required for absolute positioning of the icons */
+      margin-top: 20px;
+      width: 90%;
+      max-width: 600px;
+      padding: 15px;
+      border: 2px solid #ddd;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    /* Plus and minus button styles */
+    .icon-container {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3px; /* Reduced gap between the icons */
+    }
+
+    .icon-container .icon {
+      background-color: green;
+      color: white;
+      border-radius: 50%; /* Ensure it's perfectly circular */
+      padding: 10px; /* Reduced padding to make the circle smaller */
+      cursor: pointer;
+      font-size: 24px; /* Reduced font size */
+      transition: background-color 0.3s ease;
+      width: 30px; /* Reduced width */
+      height: 30px; /* Reduced height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-container .icon:hover {
+      background-color: darkgreen;
     }
 
     ul {
@@ -74,8 +119,13 @@
       }
 
       .image-container {
-        width: 95%; /* Slightly smaller width on small screens */
-        height: auto;
+        width: 250px; /* Slightly smaller size on small screens */
+        height: 250px; /* Adjust height accordingly */
+      }
+
+      .ingredients-container {
+        width: 100%; /* Full width on small screens */
+        padding: 10px;
       }
     }
 
@@ -89,8 +139,13 @@
       }
 
       .image-container {
+        width: 200px; /* Full width on very small screens */
+        height: 200px;
+      }
+
+      .ingredients-container {
         width: 100%; /* Full width on very small screens */
-        height: auto;
+        padding: 5px;
       }
     }
   </style>
@@ -103,9 +158,19 @@
   </div>
 
   <h2>Ingredients:</h2>
-  <ul id="ingredients-list">
-    <!-- Ingredients will be injected here -->
-  </ul>
+
+  <!-- Ingredients container -->
+  <div class="ingredients-container">
+    <!-- Icons for increasing and decreasing text size -->
+    <div class="icon-container">
+      <div class="icon" id="increase-text">+</div>
+      <div class="icon" id="decrease-text">-</div>
+    </div>
+    <!-- Ingredients list -->
+    <ul id="ingredients-list">
+      <!-- Ingredients will be injected here -->
+    </ul>
+  </div>
 
   <script src="amharic.js"></script>
 
@@ -137,10 +202,29 @@
       });
     }
 
+    // Text size adjustment
+    const increaseTextButton = document.getElementById('increase-text');
+    const decreaseTextButton = document.getElementById('decrease-text');
+    const ingredientsList = document.getElementById('ingredients-list');
+
+    let fontSize = 26; // Initial font size in px
+
+    increaseTextButton.addEventListener('click', () => {
+      fontSize += 2;
+      ingredientsList.style.fontSize = `${fontSize}px`;
+    });
+
+    decreaseTextButton.addEventListener('click', () => {
+      if (fontSize > 12) { // Don't reduce the size below 12px
+        fontSize -= 2;
+        ingredientsList.style.fontSize = `${fontSize}px`;
+      }
+    });
+
     // Click outside to return to indexamharic.html
     document.body.addEventListener('click', function(event) {
-      if (!event.target.closest('.image-container') && !event.target.closest('ul')) {
-        window.location.href = 'indexamharic.html'; // Redirect to indexamharic.html when clicking outside the image or ingredients list
+      if (!event.target.closest('.image-container') && !event.target.closest('.ingredients-container')) {
+        window.location.href = 'indexamharic.html'; // Redirect to indexamharic.html when clicking outside
       }
     });
   </script>
