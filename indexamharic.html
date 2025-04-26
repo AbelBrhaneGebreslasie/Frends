@@ -1,159 +1,201 @@
-  <!-- this is my indexamharic.html -->
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Hotel Food Menu</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      /* Styling for the language dropdown */
-      .language-selector {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background-color: rgba(255, 255, 255, 0.7);
-        border-radius: 5px;
-        padding: 5px;
-        cursor: pointer;
-      }
-  
-      .language-selector select {
-        font-size: 16px;
-        border: none;
-        background: transparent;
-        outline: none;
-        cursor: pointer;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Language Selector -->
-    <div class="language-selector">
-      <select id="language" onchange="changeLanguage()">
-          <option value="am">አማርኛ (Amharic)</option>
-        <option value="en">English</option>
-      </select>
-    </div>
-  
-    <h1>Welcome to Our Hotel Menu</h1>
-  
-    <!-- Search Bar -->
-    <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Search for a dish..." onkeyup="searchMenu()">
-    </div>
-  
-    <!-- Breakfast Section -->
-    <div class="section">
-      <h2>🍳 Kurs</h2>
-      <div class="item" data-name="Caesar Salad" onclick="showIngredients('Caesar Salad')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg" alt="hi Image">
-        </div>
-        <p>Caesar Salad --- $8</p>
-      </div>
-      <div class="item" data-name="Omelette" onclick="showIngredients('Omelette')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg" alt="oppp Image">
-        </div>
-        <p>Omelette --- $5 <span class="fasting-label">Fasting</span></p>
-      </div>
-      <div class="item" data-name="Pancakes" onclick="showIngredients('Pancakes')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg" alt="oppp Image">
-        </div>
-        <p>Pancakes --- $4</p>
-      </div>
-    </div>
-  
-    <!-- Lunch Section -->
-    <div class="section">
-      <h2>🍝 Msa</h2>
-      <div class="item" data-name="Spaghetti Bolognese" onclick="showIngredients('Spaghetti')">
-        <div class="food-image">
-          <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Spaghetti Image">
-        </div>
-        <p>Spaghetti Bolognese --- $10</p>
-      </div>
-      <div class="item" data-name="Grilled Chicken" onclick="showIngredients('Grilled Chicken')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg" alt="hi Image">
-        </div>
-        <p>Grilled Chicken --- $12</p>
-      </div>
-    </div>
-  
-    <!-- Dinner Section -->
-    <div class="section">
-      <h2>🍲 Erat</h2>
-      <div class="item" data-name="Steak" onclick="showIngredients('Steak')">
-        <div class="food-image">
-          <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Steak Image">
-        </div>
-        <p>Steak --- $18</p>
-      </div>
-      <div class="item" data-name="Salmon" onclick="showIngredients('Salmon')">
-        <div class="food-image">
-          <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Salmon Image">
-        </div>
-        <p>Salmon --- $16</p>
-      </div>
-    </div>
-  
-    <!-- Drinks Section -->
-    <div class="section">
-      <h2>☕ Miteta</h2>
-      <div class="item" data-name="Coffee" onclick="showIngredients('Coffee')">
-        <div class="food-image">
-          <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Coffee Image">
-        </div>
-        <p>Coffee --- $3</p>
-      </div>
-      <div class="item" data-name="Orange Juice" onclick="showIngredients('Orange Juice')">
-        <div class="food-image">
-          <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Juice Image">
-        </div>
-        <p>Orange Juice --- $4</p>
-      </div>
-    </div>
-  
-    <!-- Desserts Section -->
-    <div class="section">
-      <h2>🍰 Matatamya</h2>
-      <div class="item" data-name="Chocolate Cake" onclick="showIngredients('Chocolate Cake')">
-        <div class="food-image">
-          <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Cake Image">
-        </div>
-        <p>Chocolate Cake --- $6</p>
-      </div>
-      <div class="item" data-name="Ice Cream" onclick="showIngredients('Ice Cream')">
-        <div class="food-image">
-          <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Ice Cream Image">
-        </div>
-        <p>Ice Cream --- $5</p>
-      </div>
-    </div>
-  
-    <!-- Modal -->
-    <div id="modal" class="modal" onclick="closeModal()">
-      <div class="modal-content" onclick="event.stopPropagation()">
-        <h2 id="dish-name"></h2>
-        <p id="ingredients-text"></p>
-        <div id="ingredients-images" class="image-container"></div>
-      </div>
-    </div>
-  
-    <script src="amharic.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Food Menu</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Styling for the language dropdown */
+    .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 5px;
+      padding: 5px;
+      cursor: pointer;
+    }
 
-    <script>
-      function changeLanguage() {
-        const language = document.getElementById("language").value;
-        if (language === "am") {
-          window.location.href = "indexamharic.html";
-        } else if (language === "en") {
-          window.location.href = "index.html";
-        }
+    .language-selector select {
+      font-size: 16px;
+      border: none;
+      background: transparent;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Developer Button */
+    .developer-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      background-image: url('https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/cr7.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    /* Add a gap between the developer button and the menu */
+    .welcome-container {
+      margin-top: 70px; /* Adjust this value to control the gap */
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 0px; /* Add gap below the welcome text */
+    }
+
+    /* Sections */
+    .section {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Developer Button -->
+  <div class="developer-container" onclick="goToDeveloperPage()"></div>
+
+  <!-- Language Selector -->
+  <div class="language-selector">
+    <select id="language" onchange="changeLanguage()">
+        <option value="am">አማርኛ (Amharic)</option>
+        <option value="en">English</option>
+    </select>
+  </div>
+
+  <!-- Welcome Section (Now below the Developer Button) -->
+  <div class="welcome-container">
+    <h1>Welcome to Our Hotel Menu</h1>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for a dish..." onkeyup="searchMenu()">
+  </div>
+
+  <!-- Breakfast Section -->
+  <div class="section">
+    <h2>🍳 Kurs</h2>
+    <div class="item" data-name="Caesar Salad" onclick="showIngredients('Caesar Salad')">
+      <div class="food-image">
+        <img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg" alt="hi Image">
+      </div>
+      <p>Caesar Salad --- $8</p>
+    </div>
+    <div class="item" data-name="Omelette" onclick="showIngredients('Omelette')">
+      <div class="food-image">
+        <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg" alt="oppp Image">
+      </div>
+      <p>Omelette --- $5 <span class="fasting-label">Fasting</span></p>
+    </div>
+    <div class="item" data-name="Pancakes" onclick="showIngredients('Pancakes')">
+      <div class="food-image">
+        <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg" alt="oppp Image">
+      </div>
+      <p>Pancakes --- $4</p>
+    </div>
+  </div>
+
+  <!-- Lunch Section -->
+  <div class="section">
+    <h2>🍝 Msa</h2>
+    <div class="item" data-name="Spaghetti Bolognese" onclick="showIngredients('Spaghetti')">
+      <div class="food-image">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Spaghetti Image">
+      </div>
+      <p>Spaghetti Bolognese --- $10</p>
+    </div>
+    <div class="item" data-name="Grilled Chicken" onclick="showIngredients('Grilled Chicken')">
+      <div class="food-image">
+        <img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg" alt="hi Image">
+      </div>
+      <p>Grilled Chicken --- $12</p>
+    </div>
+  </div>
+
+  <!-- Dinner Section -->
+  <div class="section">
+    <h2>🍲 Erat</h2>
+    <div class="item" data-name="Steak" onclick="showIngredients('Steak')">
+      <div class="food-image">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Steak Image">
+      </div>
+      <p>Steak --- $18</p>
+    </div>
+    <div class="item" data-name="Salmon" onclick="showIngredients('Salmon')">
+      <div class="food-image">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Salmon Image">
+      </div>
+      <p>Salmon --- $16</p>
+    </div>
+  </div>
+
+  <!-- Drinks Section -->
+  <div class="section">
+    <h2>☕ Miteta</h2>
+    <div class="item" data-name="Coffee" onclick="showIngredients('Coffee')">
+      <div class="food-image">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Coffee Image">
+      </div>
+      <p>Coffee --- $3</p>
+    </div>
+    <div class="item" data-name="Orange Juice" onclick="showIngredients('Orange Juice')">
+      <div class="food-image">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Juice Image">
+      </div>
+      <p>Orange Juice --- $4</p>
+    </div>
+  </div>
+
+  <!-- Desserts Section -->
+  <div class="section">
+    <h2>🍰 Matatamya</h2>
+    <div class="item" data-name="Chocolate Cake" onclick="showIngredients('Chocolate Cake')">
+      <div class="food-image">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Cake Image">
+      </div>
+      <p>Chocolate Cake --- $6</p>
+    </div>
+    <div class="item" data-name="Ice Cream" onclick="showIngredients('Ice Cream')">
+      <div class="food-image">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc7778e6627" alt="Ice Cream Image">
+      </div>
+      <p>Ice Cream --- $5</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <h2 id="dish-name"></h2>
+      <p id="ingredients-text"></p>
+      <div id="ingredients-images" class="image-container"></div>
+    </div>
+  </div>
+
+  <script src="amharic.js"></script>
+
+  <script>
+    function changeLanguage() {
+      const language = document.getElementById("language").value;
+      if (language === "en") {
+        window.location.href = "index.html";
+      } else if (language === "am") {
+        window.location.href = "indexamharic.html";
       }
-    </script>
-  </body>
-  </html>
+    }
+
+    function goToDeveloperPage() {
+      window.location.href = "developeramharic.html"; // updated link to the new developeramharic.html
+    }
+  </script>
+</body>
+</html>
