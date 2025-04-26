@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dish Detail (Amharic)</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, white, rgb(3, 189, 252));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      cursor: pointer; /* Show a pointer cursor */
+    }
+
+    .image-container {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: default;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <img id="dish-image" src="" alt="Food Image">
+  </div>
+
+  <script src="amharic.js"></script>
+
+  <script>
+    // Just setting the image (only this small script is OK)
+    const params = new URLSearchParams(window.location.search);
+    const imageUrl = params.get('image');
+
+    if (imageUrl) {
+      document.getElementById('dish-image').src = imageUrl;
+    } else {
+      document.getElementById('dish-image').src = "https://via.placeholder.com/300";
+    }
+  </script>
+
+</body>
+</html>
