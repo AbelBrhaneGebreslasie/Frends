@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dish Detail (Amharic)</title>
-<style>
+  <title>Dish Detail</title>
+
+  <style>
     body {
       margin: 0;
       height: 100vh;
@@ -17,50 +18,46 @@
     }
 
     .image-container {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 20px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: default;
-      margin: 20px;
-      width: 90%;
-      max-width: 400px;
-    }
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  margin: 20px;
+  width: 90%;
+  max-width: 500px;
+  height: 350px;
+}
 
-    .image-container img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 20px;
-    }
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
 
-    .ingredients-container {
-      background: rgba(255, 255, 255, 0.8);
+
+    h2 {
       margin-top: 20px;
-      padding: 20px;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 400px;
-      text-align: left;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
-
-    .ingredients-container h2 {
-      margin-top: 0;
       font-size: 22px;
       color: #003366;
     }
 
-    .ingredients-container ul {
+    ul {
+      list-style-type: disc;
       padding-left: 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #000;
+      width: 90%;
+      max-width: 400px;
     }
 
-    .ingredients-container li {
+    li {
       margin-bottom: 8px;
-      font-size: 16px;
     }
   </style>
 </head>
@@ -70,18 +67,46 @@
     <img id="dish-image" src="" alt="Food Image">
   </div>
 
+  <h2>Ingredients:</h2>
+  <ul id="ingredients-list">
+    <!-- Ingredients will be injected here -->
+  </ul>
+
   <script src="amharic.js"></script>
 
   <script>
-    // Just setting the image (only this small script is OK)
+    // Map image URL to ingredients
+    const ingredientsData = {
+      "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
+      "https://images.unsplash.com/photo-1560807707-8cc7778e6627": ["Flour", "Milk", "Eggs", "Syrup"],
+      "https://via.placeholder.com/300": ["Ingredient 1", "Ingredient 2"]
+    };
+
+    // Get image URL from parameters
     const params = new URLSearchParams(window.location.search);
     const imageUrl = params.get('image');
 
     if (imageUrl) {
       document.getElementById('dish-image').src = imageUrl;
-    } else {
-      document.getElementById('dish-image').src = "https://via.placeholder.com/300";
+
+      const ingredients = ingredientsData[imageUrl] || ["Ingredient 1", "Ingredient 2"];
+      const listContainer = document.getElementById('ingredients-list');
+      listContainer.innerHTML = "";
+
+      ingredients.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        listContainer.appendChild(li);
+      });
     }
+
+    // Click outside to return
+    document.body.addEventListener('click', function(event) {
+      if (!event.target.closest('.image-container') && !event.target.closest('ul')) {
+        window.location.href = 'index.html';
+      }
+    });
   </script>
 
 </body>
