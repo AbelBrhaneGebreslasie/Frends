@@ -16,50 +16,67 @@
       font-family: Arial, sans-serif;
       cursor: pointer;
     }
-
+  
     .image-container {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: default;
-  margin: 20px;
-  width: 90%;
-  max-width: 500px;
-  height: 350px;
-}
-
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: default;
+      margin: 20px;
+      width: 90%;
+      max-width: 500px;
+      height: 350px; /* Fixed height for the image container */
+    }
+  
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  
     h2 {
       margin-top: 20px;
-      font-size: 22px;
+      font-size: 2rem; /* Responsive size */
       color: #003366;
+      text-align: center;
     }
-
+  
     ul {
       list-style-type: disc;
       padding-left: 20px;
       margin-top: 10px;
-      font-size: 16px;
+      font-size: 1.2rem; /* Slightly larger font for readability */
       color: #000;
       width: 90%;
       max-width: 400px;
+      text-align: center; /* Align the list items in the center */
     }
-
+  
     li {
       margin-bottom: 8px;
     }
+  
+    /* Responsive design for smaller screens */
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem; /* Smaller text on mobile */
+      }
+  
+      ul {
+        font-size: 1rem; /* Adjust font size of ingredients */
+      }
+  
+      .image-container {
+        height: 250px; /* Smaller image container for mobile */
+      }
+    }
   </style>
+  
 </head>
 <body>
 
