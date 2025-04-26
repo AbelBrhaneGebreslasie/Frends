@@ -4,78 +4,96 @@
   <meta charset="UTF-8">
   <title>Dish Detail</title>
 
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, white, rgb(3, 189, 252));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 30px;
-    font-family: Arial, sans-serif;
-    cursor: pointer;
-  }
-
-  .image-container {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: default;
-    margin: 20px 10px;
-    width: 90%;
-    height: auto;
-  }
-
-  .image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 20px;
-  }
-
-  h2 {
-    margin-top: 0.1%;
-    font-size: 5vw;
-    color: #003366;
-    text-align: left;
-    width: 100%;
-    padding-left: 10%;
-  }
-
-  ul {
-    list-style-type: disc;
-    margin-top: 1%;
-    font-size: 2.6rem; /* 📢 Doubled the size here */
-    color: #000;
-    width: 90%;
-    padding-left: 8%;
-    text-align: left;
-  }
-
-  li {
-    margin-bottom: 15px; /* 📢 Increased spacing for bigger text */
-  }
-
-  @media (max-width: 600px) {
-    h2 {
-      font-size: 1.8rem;
-    }
-
-    ul {
-      font-size: 2rem; /* 📢 Mobile also increased */
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, white, rgb(3, 189, 252));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;  /* Align items from the top */
+      padding-top: 30px;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      overflow-x: hidden;
     }
 
     .image-container {
-      height: 250px;
-      width: calc(100% - 20px); /* Full width minus margin */
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: default;
+      margin: 20px 10px;
+      width: 100%; /* Flexible width for responsiveness */
+      max-width: 1200px; /* Max width to prevent it from getting too large */
+      height: auto;
     }
-  }
-</style>
+
+    .image-container img {
+      width: 100%; /* Responsive width */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: cover; /* Ensure the image covers the area */
+      border-radius: 20px;
+    }
+
+    h2 {
+      margin-top: 0.1%;
+      font-size: 5vw;
+      color: #003366;
+      text-align: left;
+      width: 100%;
+      padding-left: 10%;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-top: 1%;
+      font-size: 2.6rem;
+      color: #000;
+      width: 90%;
+      padding-left: 8%;
+      text-align: left;
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem; /* Smaller font size for better readability on mobile */
+      }
+
+      ul {
+        font-size: 1.8rem; /* Adjust list font size for mobile */
+      }
+
+      .image-container {
+        width: 95%; /* Slightly smaller width on small screens */
+        height: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.5rem; /* Even smaller font size for very small screens */
+      }
+
+      ul {
+        font-size: 1.6rem; /* Adjust list font size for very small screens */
+      }
+
+      .image-container {
+        width: 100%; /* Full width on very small screens */
+        height: auto;
+      }
+    }
+  </style>
 
 </head>
 <body>
