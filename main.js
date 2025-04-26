@@ -4,7 +4,7 @@
 const foodImages = document.querySelectorAll('.food-image');
 foodImages.forEach(image => {
   image.addEventListener('click', function (event) {
-    event.stopPropagation();
+    event.stopPropagation(); // Don't trigger body click
     const foodName = image.parentElement.getAttribute("data-name");
     let imageUrl = "";
 
@@ -27,15 +27,7 @@ foodImages.forEach(image => {
   });
 });
 
-// Handle clicking outside the image container
-document.body.addEventListener('click', function (event) {
-  if (!event.target.closest('.image-container') && !event.target.closest('.food-image')) {
-    // If currently on index2.html, go back to index.html
-    if (window.location.href.includes("index2.html")) {
-      window.location.href = 'index.html';
-    }
-  }
-});
+// (Removed clicking outside navigation behavior here)
 
 // Search functionality
 const searchInput = document.getElementById('searchInput'); // Get the search input field
