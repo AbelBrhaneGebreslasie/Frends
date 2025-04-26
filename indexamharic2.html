@@ -27,7 +27,7 @@
     align-items: center;
     cursor: default;
     margin: 20px 10px;
-    width: 90%; /* Subtract 20px from the full width to account for the left and right margins */
+    width: 90%;
     height: auto;
   }
 
@@ -120,10 +120,10 @@
       });
     }
 
-    // Click outside to return
+    // Click outside to return to indexamharic.html
     document.body.addEventListener('click', function(event) {
       if (!event.target.closest('.image-container') && !event.target.closest('ul')) {
-        window.location.href = 'index.html'; // Redirect to index page when clicking outside the image or ingredients list
+        window.location.href = 'indexamharic.html'; // Redirect to indexamharic.html when clicking outside the image or ingredients list
       }
     });
   </script>
