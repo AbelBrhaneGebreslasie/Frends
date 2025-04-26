@@ -26,22 +26,7 @@ foodImagesAmharic.forEach(image => {
   });
 });
 
-// Handle clicking outside the image container and ingredients container
-document.body.addEventListener('click', function (event) {
-  const isInsideImageContainer = event.target.closest('.image-container') || event.target.closest('.food-image');
-  const isInsideIngredientsContainer = event.target.closest('.ingredients-container'); // Check if inside ingredients container
-
-  // Only trigger navigation if clicked outside image and ingredients container
-  if (!isInsideImageContainer && !isInsideIngredientsContainer) {
-    const currentURL = window.location.href;
-
-    if (currentURL.includes("indexamharic2.html")) {
-      window.location.href = 'indexamharic.html';
-    } else if (currentURL.includes("index2.html")) {
-      window.location.href = 'index.html';
-    }
-  }
-});
+// (Removed code that handled clicking outside containers)
 
 // Search functionality
 const searchInput = document.getElementById('searchInput'); // Get the search input field
