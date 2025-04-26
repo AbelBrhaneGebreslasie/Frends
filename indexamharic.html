@@ -6,11 +6,19 @@
   <title>Hotel Food Menu</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Styling for the language dropdown */
-    .language-selector {
+    /* Container for language and developer button */
+    .header-container {
       position: absolute;
       top: 20px;
       right: 20px;
+      display: flex; /* Use flexbox to align items horizontally */
+      gap: 20px; /* Horizontal space between the two elements */
+      align-items: center; /* Vertically align items in the center */
+      height: 50px; /* Keep the height of the container consistent */
+    }
+
+    /* Styling for the language dropdown */
+    .language-selector {
       background-color: rgba(255, 255, 255, 0.7);
       border-radius: 5px;
       padding: 5px;
@@ -27,9 +35,6 @@
 
     /* Developer Button */
     .developer-container {
-      position: absolute;
-      top: 10px;
-      right: 10px;
       width: 50px;
       height: 50px;
       background-image: url('https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/cr7.jpg');
@@ -42,7 +47,7 @@
       z-index: 100;
     }
 
-    /* Add a gap between the developer button and the menu */
+    /* Add a gap between the welcome section and the menu */
     .welcome-container {
       margin-top: 70px; /* Adjust this value to control the gap */
       text-align: center;
@@ -60,15 +65,18 @@
   </style>
 </head>
 <body>
-  <!-- Developer Button -->
-  <div class="developer-container" onclick="goToDeveloperPage()"></div>
-
-  <!-- Language Selector -->
-  <div class="language-selector">
-    <select id="language" onchange="changeLanguage()">
+  <!-- Container to hold both elements with a gap between them -->
+  <div class="header-container">
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <select id="language" onchange="changeLanguage()">
         <option value="am">አማርኛ (Amharic)</option>
         <option value="en">English</option>
-    </select>
+      </select>
+    </div>
+
+    <!-- Developer Button -->
+    <div class="developer-container" onclick="goToDeveloperPage()"></div>
   </div>
 
   <!-- Welcome Section (Now below the Developer Button) -->
