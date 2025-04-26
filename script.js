@@ -117,12 +117,32 @@ foodItems.forEach(item => {
 const foodImages = document.querySelectorAll('.food-image');
 foodImages.forEach(image => {
   image.addEventListener('click', function(event) {
-    event.stopPropagation(); // Prevent modal from opening when clicking image
+    event.stopPropagation(); // prevent opening ingredients modal
     const foodName = image.parentElement.getAttribute("data-name");
-    const foodImage = ingredients[foodName].images[0]; // Get the first image of the food
-    showFullImage(foodImage); // Show full image in modal
+    let imageUrl = "";
+
+    switch (foodName) {
+      case "Caesar Salad":
+        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg";
+        break;
+        case "Omelette":
+          imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg";
+          break;
+       
+  
+      case "Pancakes":
+        imageUrl = "https://images.unsplash.com/photo-1560807707-8cc7778e6627";
+        break;
+      // Add more cases for each food item
+      default:
+        imageUrl = "https://via.placeholder.com/300"; // default image
+    }
+
+    window.location.href = `index2.html?image=${encodeURIComponent(imageUrl)}`;
   });
 });
+
+
 
 // Function to show the food image in full screen in a modal
 function showFullImage(imageSrc) {
