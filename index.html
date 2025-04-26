@@ -1,7 +1,6 @@
-
-  <!-- this is my index.html -->
-  <!DOCTYPE html>
-  <html lang="en">
+<!-- this is my index.html -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -16,11 +15,12 @@
     .language-selector {
       position: absolute;
       top: 20px;
-      right: 20px;
+      right: 80px; /* shifted a bit left to fit the developer button */
       background-color: rgba(255, 255, 255, 0.7);
       border-radius: 5px;
       padding: 5px;
       cursor: pointer;
+      z-index: 100;
     }
 
     .language-selector select {
@@ -30,9 +30,38 @@
       outline: none;
       cursor: pointer;
     }
-  </style>
 
-  <body>
+    /* Developer Button */
+    .developer-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      background-image: url('https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/cr7.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 101;
+    }
+
+    /* Adjust Welcome Title */
+    h1 {
+      margin-top: 70px; /* Add space below the buttons */
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 0px;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- Developer Button -->
+    <div class="developer-container" onclick="goToDeveloperPage()"></div>
+
     <!-- Language Selector -->
     <div class="language-selector">
       <select id="language" onchange="changeLanguage()">
@@ -42,7 +71,6 @@
     </div>
   
     <h1>Welcome to Our Hotel Menu</h1>
-
  
     <!-- Search Bar -->
     <div class="search-container">
@@ -149,8 +177,7 @@
       </div>
     </div>
     
-
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 
     <script>
       function changeLanguage() {
@@ -161,7 +188,10 @@
           window.location.href = "index.html";
         }
       }
+
+      function goToDeveloperPage() {
+        window.location.href = "developer.html"; // navigate to developer.html
+      }
     </script>
-  </body>
-  </html>
-  
+</body>
+</html>
