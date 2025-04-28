@@ -1,3 +1,4 @@
+
 <!-- this is my index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,7 @@
       position: absolute;
       top: 20px;
       right: 80px; /* shifted a bit left to fit the developer button */
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: white;
       border-radius: 5px;
       padding: 5px;
       cursor: pointer;
@@ -63,12 +64,11 @@
     <div class="developer-container" onclick="goToDeveloperPage()"></div>
 
     <!-- Language Selector -->
-    <div class="language-selector">
-      <select id="language" onchange="changeLanguage()">
-        <option value="en">English</option>
-        <option value="am">አማርኛ (Amharic)</option>
-      </select>
-    </div>
+<!-- Language Selector -->
+<div class="language-selector" onclick="toggleLanguage()">
+  <span id="language-text">አማርኛ</span> <!-- This will toggle between English and Amharic -->
+</div>
+
   
     <h1>Welcome to Our Hotel Menu</h1>
  
@@ -180,18 +180,22 @@
     <script src="main.js"></script>
 
     <script>
-      function changeLanguage() {
-        const language = document.getElementById("language").value;
-        if (language === "am") {
-          window.location.href = "indexamharic.html";
-        } else if (language === "en") {
-          window.location.href = "index.html";
-        }
-      }
+      // Toggle between English and Amharic when clicked
+function toggleLanguage() {
+  const languageText = document.getElementById("language-text");
 
-      function goToDeveloperPage() {
-        window.location.href = "developer.html"; // navigate to developer.html
-      }
+  // Check the current language and toggle it
+  if (languageText.innerText === "አማርኛ") {
+    languageText.innerText = "English"; // Change to Amharic
+    // You can redirect to the Amharic version if needed
+    window.location.href = "indexamharic.html"; // Redirect to Amharic page (if you have that page)
+  } else {
+    languageText.innerText = "አማርኛ"; // Change to English
+    // You can redirect to the English version if needed
+    window.location.href = "index.html"; // Redirect to English page (if you have that page)
+  }
+}
+
     </script>
 </body>
 </html>
