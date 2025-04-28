@@ -18,11 +18,16 @@
     }
 
     /* Styling for the language dropdown */
-    .language-selector {
-      background-color: rgba(255, 255, 255, 0.7);
+     /* Styling for the language dropdown */
+     .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 80px; /* shifted a bit left to fit the developer button */
+      background-color: white;
       border-radius: 5px;
       padding: 5px;
       cursor: pointer;
+      z-index: 100;
     }
 
     .language-selector select {
@@ -32,6 +37,7 @@
       outline: none;
       cursor: pointer;
     }
+
 
     /* Developer Button */
     .developer-container {
@@ -68,12 +74,11 @@
   <!-- Container to hold both elements with a gap between them -->
   <div class="header-container">
     <!-- Language Selector -->
-    <div class="language-selector">
-      <select id="language" onchange="changeLanguage()">
-        <option value="am">አማርኛ (Amharic)</option>
-        <option value="en">English</option>
-      </select>
-    </div>
+<!-- Language Selector -->
+<div class="language-selector" onclick="toggleLanguage()">
+  <span id="language-text">English</span> <!-- This will toggle between English and Amharic -->
+</div>
+
 
     <!-- Developer Button -->
     <div class="developer-container" onclick="goToDeveloperPage()"></div>
