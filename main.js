@@ -1,3 +1,4 @@
+
 // main.js
 
 // Handle clicking on circular food image
