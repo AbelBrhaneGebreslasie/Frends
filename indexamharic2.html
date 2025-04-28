@@ -109,20 +109,23 @@
     }
 
     .back-to-home button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 20px;
-      background-color: #003366;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
+  width: auto; /* Or set specific width if you want */
+  padding: 10px 20px;
+  background-color: #003366;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 30px;
+  display: inline-block;
+  border: none; /* OPTIONAL: remove default button border */
+  cursor: pointer; /* Add hand cursor for button */
+}
+.back-to-home button:hover {
+  background-color: #0055aa;
+}
 
-    .back-to-home button:hover {
-      background-color: #f2f2f2;
-    }
 
     @media (max-width: 768px) {
       h2 {
