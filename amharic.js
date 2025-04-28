@@ -1,6 +1,6 @@
 // Handle clicking on circular food image
-const foodImagesAmharic = document.querySelectorAll('.food-image');
-foodImagesAmharic.forEach(image => {
+const foodImages = document.querySelectorAll('.food-image'); // Changed variable name for consistency
+foodImages.forEach(image => {
   image.addEventListener('click', function (event) {
     event.stopPropagation(); // Don't trigger body click
     const foodName = image.parentElement.getAttribute("data-name");
@@ -26,8 +26,6 @@ foodImagesAmharic.forEach(image => {
   });
 });
 
-// (Removed code that handled clicking outside containers)
-
 // Search functionality
 const searchInput = document.getElementById('searchInput'); // Get the search input field
 const foodItems = document.querySelectorAll('.item'); // All food items
@@ -45,3 +43,24 @@ searchInput.addEventListener('input', function () {
     }
   });
 });
+
+// Toggle between English and Amharic when clicked
+function toggleLanguage() {
+  const languageText = document.getElementById("language-text");
+
+  // Check the current language and toggle it
+  if (languageText.innerText === "አማርኛ") {
+    languageText.innerText = "English"; // Change to Amharic
+    // Redirect to Amharic page (you can adjust this logic depending on your page structure)
+    window.location.href = "indexamharic.html"; // Redirect to the Amharic page (if you have that page)
+  } else {
+    languageText.innerText = "አማርኛ"; // Change to English
+    // Redirect to English page
+    window.location.href = "index.html"; // Redirect to the English page (if you have that page)
+  }
+  
+}
+
+// Add event listener to your language toggle element
+const languageToggle = document.getElementById('language-toggle'); // Assuming you have a button or link to toggle language
+languageToggle.addEventListener('click', toggleLanguage);
