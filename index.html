@@ -11,22 +11,36 @@
   
   <style>
     /* Styling for the language containers */
-    .language-selector-container {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      display: flex;
-      gap: 10px;
-    }
+/* Styling for the language containers */
+.language-selector-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
 
-    .language-selector {
-      background-color: white;
-      border-radius: 5px;
-      padding: 5px;
-      cursor: pointer;
-      z-index: 100;
-      font-size: 16px;
-    }
+.language-selector {
+  /* background-color: white;*/
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 100;
+  font-size: 16px;
+}
+
+/* Green background for Amharic */
+.language-selector.amaric {
+  /*background-color:green*/;
+  color: black;
+}
+
+/* Red background for English */
+.language-selector.english {
+ background-color:white;
+  color: black;
+}
+
 
     /* Developer Button */
     .developer-container {
@@ -121,15 +135,16 @@
   }
 </script>
 
-    <!-- Language Selector -->
-    <div class="language-selector-container">
-      <div class="language-selector" onclick="toggleLanguage('አማርኛ')">
-        አማርኛ
-      </div>
-      <div class="language-selector" onclick="toggleLanguage('English')">
-        English
-      </div>
-    </div>
+<!-- Language Selector -->
+<div class="language-selector-container">
+  <div class="language-selector amaric" onclick="toggleLanguage('አማርኛ')">
+    አማርኛ
+  </div>
+  <div class="language-selector english" onclick="toggleLanguage('English')">
+    English
+  </div>
+</div>
+
 
     <h1>Welcome to Our Hotel Menu</h1>
  
