@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Dish Detail</title>
+
   <style>
     html, body {
       margin: 0;
@@ -10,18 +11,21 @@
       width: 100%;
       min-height: 100vh;
       box-sizing: border-box;
-      background: linear-gradient(135deg, white, rgb(3, 189, 252));
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
       padding-top: 20px;
+      background: linear-gradient(135deg, white, rgb(3, 189, 252));
     }
 
     .image-container {
-      width: 80vw;
-      height: 80vw;
+      width: 60vw;
+      height: 60vw;
       max-width: 400px;
       max-height: 400px;
       background: rgba(255, 255, 255, 0.9);
@@ -42,15 +46,15 @@
     }
 
     h2 {
-      margin: 20px 0 10px;
-      font-size: 5vw;
+      margin: 20px 0 10px 0;
+      font-size: 2rem;
       color: #003366;
       text-align: center;
     }
 
     ul {
       list-style-type: disc;
-      font-size: 4vw;
+      font-size: 1.2rem;
       color: #000;
       width: 90%;
       max-width: 600px;
@@ -62,87 +66,59 @@
       margin-bottom: 10px;
     }
 
-    .back-to-home button {
-      padding: 3vw 6vw;
-      background-color: #003366;
-      color: white;
-      border-radius: 6px;
-      font-size: 4vw;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      max-width: 300px;
-      position: fixed;
-      bottom: 80px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1000;
-    }
-
-    .back-to-home button:hover {
-      background-color: #0055aa;
-    }
-
     .back-text {
       position: fixed;
       top: 10px;
       left: 10px;
       font-size: 1.2rem;
       color: white;
+      cursor: pointer;
       background-color: #003366;
       border-radius: 8px;
       padding: 8px 16px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       z-index: 1000;
-      cursor: pointer;
       transition: background-color 0.3s;
     }
 
     .back-text:hover {
-      background-color: #0055aa;
+      background-color: #002244;
     }
 
-    /* Desktop refinement */
-    @media (min-width: 768px) {
-      h2 {
-        font-size: 2rem;
-      }
-
-      ul {
-        font-size: 1.2rem;
-        padding-left: 20px;
-      }
-
-      .back-to-home button {
-        font-size: 1rem;
-        padding: 12px 24px;
-      }
-
+    @media (max-width: 768px) {
       .image-container {
-        width: 60vw;
-        height: 60vw;
+        width: 70vw;
+        height: 70vw;
       }
     }
 
-    @media (min-width: 1200px) {
+    @media (max-width: 480px) {
       .image-container {
-        width: 400px;
-        height: 400px;
+        width: 80vw;
+        height: 80vw;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Back Button -->
+  <div class="back-text" onclick="goBackHome()">&lt; Back</div>
+
+  <!-- Image Container -->
   <div class="image-container">
-    <img id="dish-image" src="" alt="Food Image">
+    <img id="dish-image" src="" alt="Food Image" onerror="this.src='https://via.placeholder.com/300'; this.alt='Image not available';">
   </div>
 
+  <!-- Ingredients Header -->
   <h2>Ingredients:</h2>
 
-  <ul id="ingredients-list"></ul>
-
-  <div class="back-text" onclick="goBackHome()">&lt; Back</div>
+  <!-- Ingredients List -->
+  <div class="ingredients-container">
+    <ul id="ingredients-list">
+      <!-- Ingredients will be dynamically injected here -->
+    </ul>
+  </div>
 
   <script>
     const ingredientsData = {
@@ -156,14 +132,19 @@
     const imageUrl = params.get('image');
 
     if (imageUrl) {
-      document.getElementById('dish-image').src = imageUrl;
+      const dishImage = document.getElementById('dish-image');
+      dishImage.src = imageUrl;
+
       const ingredients = ingredientsData[imageUrl] || ["Ingredient 1", "Ingredient 2"];
-      const list = document.getElementById('ingredients-list');
-      list.innerHTML = "";
+      dishImage.alt = ingredients.join(', ') + ' dish';
+
+      const listContainer = document.getElementById('ingredients-list');
+      listContainer.innerHTML = "";
+
       ingredients.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
-        list.appendChild(li);
+        listContainer.appendChild(li);
       });
     }
 
@@ -171,6 +152,5 @@
       window.location.href = 'indexamharic.html';
     }
   </script>
-
 </body>
 </html>
