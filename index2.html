@@ -4,24 +4,20 @@
   <meta charset="UTF-8">
   <title>Dish Detail</title>
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100vh;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      padding-top: 20px;
       background: linear-gradient(135deg, white, rgb(3, 189, 252));
       display: flex;
       flex-direction: column;
       align-items: center;
+      font-family: Arial, sans-serif;
       overflow-x: hidden;
-      padding-top: 20px;
     }
-  
+
     .image-container {
-      width: 80vw;
-      height: 80vw;
+      width: 60vw;
+      height: 60vw;
       max-width: 400px;
       max-height: 400px;
       background: rgba(255, 255, 255, 0.9);
@@ -33,97 +29,208 @@
       align-items: center;
       overflow: hidden;
     }
-  
+
     .image-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
     }
-  
+
     h2 {
-      margin: 30px 0 15px 0;
-      font-size: 6vw;
+      margin: 20px 0 10px 0;
+      font-size: 2rem;
       color: #003366;
       text-align: center;
     }
-  
+
     ul {
       list-style-type: disc;
-      font-size: 5vw;
+      font-size: 1.2rem;
       color: #000;
       width: 90%;
-      max-width: 700px;
-      padding-left: 6vw;
-      margin: 0 auto 40px;
+      max-width: 600px;
+      padding-left: 20px;
+      margin: 0 auto 30px;
     }
-  
+
     li {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-  
-    .back-to-home {
-      margin-bottom: 40px;
-    }
-  
+
     .back-to-home button {
-      padding: 4vw 8vw;
+      padding: 12px 24px;
       background-color: #003366;
       color: white;
-      border-radius: 8px;
-      font-size: 5vw;
+      border-radius: 6px;
+      font-size: 1rem;
       border: none;
       cursor: pointer;
       transition: background-color 0.3s;
-      max-width: 320px;
     }
-  
+
     .back-to-home button:hover {
       background-color: #0055aa;
     }
-  
-    /* Desktop refinements */
-    @media (min-width: 768px) {
-      h2 {
-        font-size: 2.5rem;
+
+    @media (max-width: 768px) {
+      .image-container {
+        width: 70vw;
+        height: 70vw;
       }
-  
-      ul {
+
+      h2 {
         font-size: 1.6rem;
-        padding-left: 30px;
       }
-  
-      .back-to-home button {
-        font-size: 1.4rem;
-        padding: 14px 28px;
-      }
-  
-      .image-container {
-        width: 60vw;
-        height: 60vw;
-      }
-    }
-  
-    @media (min-width: 1200px) {
-      .image-container {
-        width: 400px;
-        height: 400px;
-      }
-  
-      h2 {
-        font-size: 2.8rem;
-      }
-  
+
       ul {
-        font-size: 1.8rem;
-      }
-  
-      .back-to-home button {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        padding-left: 16px;
       }
     }
+
+    @media (max-width: 480px) {
+      .image-container {
+        width: 80vw;
+        height: 80vw;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      ul {
+        font-size: 0.95rem;
+      }
+    }
+    html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, white, rgb(3, 189, 252));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 20px;
+  background: linear-gradient(135deg, white, rgb(3, 189, 252));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Image container should be more responsive */
+.image-container {
+  width: 80vw;
+  height: 80vw;
+  max-width: 400px;
+  max-height: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+h2 {
+  margin: 20px 0 10px 0;
+  font-size: 5vw;
+  color: #003366;
+  text-align: center;
+}
+
+ul {
+  list-style-type: disc;
+  font-size: 4vw;
+  color: #000;
+  width: 90%;
+  max-width: 600px;
+  padding-left: 5vw;
+  margin: 0 auto 30px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.back-to-home {
+  margin-bottom: 30px;
+}
+
+.back-to-home button {
+  padding: 3vw 6vw;
+  background-color: #003366;
+  color: white;
+  border-radius: 6px;
+  font-size: 4vw;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  max-width: 300px;
+}
+
+.back-to-home button:hover {
+  background-color: #0055aa;
+}
+
+/* Desktop-specific refinements */
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  ul {
+    font-size: 1.2rem;
+    padding-left: 20px;
+  }
+
+  .back-to-home button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+
+  .image-container {
+    width: 60vw;
+    height: 60vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .image-container {
+    width: 400px;
+    height: 400px;
+  }
+}
+
   </style>
-  
 </head>
 <body>
 
