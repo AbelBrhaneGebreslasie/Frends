@@ -1,25 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Dish Detail</title>
-
   <style>
-    body {
+    html, body {
       margin: 0;
-      padding-top: 20px;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      box-sizing: border-box;
       background: linear-gradient(135deg, white, rgb(3, 189, 252));
       display: flex;
       flex-direction: column;
       align-items: center;
       font-family: Arial, sans-serif;
       overflow-x: hidden;
+      padding-top: 20px;
     }
 
     .image-container {
-      width: 60vw;
-      height: 60vw;
+      width: 80vw;
+      height: 80vw;
       max-width: 400px;
       max-height: 400px;
       background: rgba(255, 255, 255, 0.9);
@@ -40,19 +42,19 @@
     }
 
     h2 {
-      margin: 20px 0 10px 0;
-      font-size: 2rem;
+      margin: 20px 0 10px;
+      font-size: 5vw;
       color: #003366;
       text-align: center;
     }
 
     ul {
       list-style-type: disc;
-      font-size: 1.2rem;
+      font-size: 4vw;
       color: #000;
       width: 90%;
       max-width: 600px;
-      padding-left: 20px;
+      padding-left: 5vw;
       margin: 0 auto 30px;
     }
 
@@ -61,213 +63,88 @@
     }
 
     .back-to-home button {
-      padding: 12px 24px;
+      padding: 3vw 6vw;
       background-color: #003366;
       color: white;
       border-radius: 6px;
-      font-size: 1rem;
+      font-size: 4vw;
       border: none;
       cursor: pointer;
       transition: background-color 0.3s;
-    
-  position: fixed;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-}
+      max-width: 300px;
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
 
     .back-to-home button:hover {
       background-color: #0055aa;
     }
 
-    @media (max-width: 768px) {
-      .image-container {
-        width: 70vw;
-        height: 70vw;
-      }
+    .back-text {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      font-size: 1.2rem;
+      color: white;
+      background-color: #003366;
+      border-radius: 8px;
+      padding: 8px 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
+    .back-text:hover {
+      background-color: #0055aa;
+    }
+
+    /* Desktop refinement */
+    @media (min-width: 768px) {
       h2 {
-        font-size: 1.6rem;
+        font-size: 2rem;
       }
 
       ul {
+        font-size: 1.2rem;
+        padding-left: 20px;
+      }
+
+      .back-to-home button {
         font-size: 1rem;
-        padding-left: 16px;
+        padding: 12px 24px;
       }
-    }
 
-    @media (max-width: 480px) {
       .image-container {
-        width: 80vw;
-        height: 80vw;
-      }
-
-      h2 {
-        font-size: 1.4rem;
-      }
-
-      ul {
-        font-size: 0.95rem;
+        width: 60vw;
+        height: 60vw;
       }
     }
-    html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
 
-body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, white, rgb(3, 189, 252));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-
-body {
-  padding-top: 20px;
-  background: linear-gradient(135deg, white, rgb(3, 189, 252));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
-}
-
-/* Image container should be more responsive */
-.image-container {
-  width: 80vw;
-  height: 80vw;
-  max-width: 400px;
-  max-height: 400px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-h2 {
-  margin: 20px 0 10px 0;
-  font-size: 5vw;
-  color: #003366;
-  text-align: center;
-}
-
-ul {
-  list-style-type: disc;
-  font-size: 4vw;
-  color: #000;
-  width: 90%;
-  max-width: 600px;
-  padding-left: 5vw;
-  margin: 0 auto 30px;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-.back-to-home {
-  margin-bottom: 30px;
-}
-
-.back-to-home button {
-  padding: 3vw 6vw;
-  background-color: #003366;
-  color: white;
-  border-radius: 6px;
-  font-size: 4vw;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  max-width: 300px;
-}
-
-.back-to-home button:hover {
-  background-color: #0055aa;
-}
-
-/* Desktop-specific refinements */
-@media (min-width: 768px) {
-  h2 {
-    font-size: 2rem;
-  }
-
-  ul {
-    font-size: 1.2rem;
-    padding-left: 20px;
-  }
-
-  .back-to-home button {
-    font-size: 1rem;
-    padding: 12px 24px;
-  }
-
-  .image-container {
-    width: 60vw;
-    height: 60vw;
-  }
-}
-
-@media (min-width: 1200px) {
-  .image-container {
-    width: 400px;
-    height: 400px;
-  }
-}
-
+    @media (min-width: 1200px) {
+      .image-container {
+        width: 400px;
+        height: 400px;
+      }
+    }
   </style>
-
 </head>
 <body>
 
-  <!-- Image Container -->
   <div class="image-container">
     <img id="dish-image" src="" alt="Food Image">
   </div>
 
-  <!-- Ingredients Header -->
   <h2>Ingredients:</h2>
 
-  <div class="ingredients-container">
- 
+  <ul id="ingredients-list"></ul>
 
-    <ul id="ingredients-list">
-      <!-- Ingredients will be dynamically injected here -->
-    </ul>
-  </div>
-
-  <!-- Red "Back to Home" Container -->
-  <div class="back-to-home">
-    <button onclick="goBackHome()">Back to Home</button>
-  </div>
-
-  <script src="amharic.js"></script>
+  <div class="back-text" onclick="goBackHome()">&lt; Back</div>
 
   <script>
-    // Map image URL to ingredients
     const ingredientsData = {
       "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
       "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
@@ -275,46 +152,23 @@ li {
       "https://via.placeholder.com/300": ["Ingredient 1", "Ingredient 2"]
     };
 
-    // Get image URL from query parameters
     const params = new URLSearchParams(window.location.search);
     const imageUrl = params.get('image');
 
     if (imageUrl) {
       document.getElementById('dish-image').src = imageUrl;
-
       const ingredients = ingredientsData[imageUrl] || ["Ingredient 1", "Ingredient 2"];
-      const listContainer = document.getElementById('ingredients-list');
-      listContainer.innerHTML = ""; // Clear any existing content
-
+      const list = document.getElementById('ingredients-list');
+      list.innerHTML = "";
       ingredients.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
-        listContainer.appendChild(li);
+        list.appendChild(li);
       });
     }
 
-    // Text size adjustment
-    const increaseTextButton = document.getElementById('increase-text');
-    const decreaseTextButton = document.getElementById('decrease-text');
-    const ingredientsList = document.getElementById('ingredients-list');
-
-    let fontSize = 26; // Initial font size in px
-
-    increaseTextButton.addEventListener('click', () => {
-      fontSize += 2;
-      ingredientsList.style.fontSize = `${fontSize}px`;
-    });
-
-    decreaseTextButton.addEventListener('click', () => {
-      if (fontSize > 12) {
-        fontSize -= 2;
-        ingredientsList.style.fontSize = `${fontSize}px`;
-      }
-    });
-
-    // Function to go back to the home page
     function goBackHome() {
-      window.location.href = 'indexamharic.html'; // Redirect to the home page
+      window.location.href = 'indexamharic.html';
     }
   </script>
 
