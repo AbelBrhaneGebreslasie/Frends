@@ -92,7 +92,7 @@
   margin-top: 20px; /* Adjust the space above the breakfast section */
 }
 
-    
+
 /* Change color of the entire <p> text (including the Fasting label) to red */
   .item p {
   color: black; /* Set the color of the whole text to red */
@@ -163,6 +163,20 @@
       </div>
       <p>Pancakes --- $4</p>
     </div>
+ <!-- New Pasta Item -->
+<div class="item" data-name="Pasta" onclick="showIngredients('Pasta')">
+  <div class="food-image">
+    <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/bbb.jpg" alt="Pasta Image">
+  </div>
+  <p>Pasta --- $10</p>
+</div>
+ <!-- New Tea Item -->
+ <div class="item" data-name="Tea" onclick="showIngredients('Tea')">
+  <div class="food-image">
+    <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/ddd.jpg" alt="Pasta Image">
+  </div>
+  <p>Tea --- $10</p>
+</div>
   </div>
 
   <!-- Lunch Section -->
@@ -275,6 +289,9 @@
             break;
           case "Pancakes":
             imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/pancake.jpg";
+            break;
+          case "Tea":
+            imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/ddd.jpg";
             break;
           default:
             imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/default.jpg";
