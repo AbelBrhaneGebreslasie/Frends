@@ -18,7 +18,8 @@ foodImages.forEach(image => {
         break;
       case "Pancakes":
         imageUrl = "https://images.unsplash.com/photo-1560807707-8cc7778e6627";
-        break;
+        break;  
+
       default:
         imageUrl = "https://via.placeholder.com/300";
     }
