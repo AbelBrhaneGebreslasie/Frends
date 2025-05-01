@@ -1,37 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Dish Detail</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100vh;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
-      background: linear-gradient(135deg, white, rgb(3, 189, 252));
-    }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 5vh;
-    }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  background: linear-gradient(135deg, white, rgb(3, 189, 252));
+}
 
     .image-container {
-      width: 80vw;
-      height: 80vw;
-      max-width: 90vw;
-      max-height: 90vw;
+      width: 60vw;
+      height: 60vw;
+      max-width: 400px;
+      max-height: 400px;
       background: rgba(255, 255, 255, 0.9);
       border-radius: 50%;
-      border: 3px solid white;
+      border: 4px solid white;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
       display: flex;
       justify-content: center;
@@ -47,83 +48,116 @@
     }
 
     h2 {
-      margin: 5vh 0 2vh 0;
-      font-size: 6vw;
+      margin: 20px 0 10px 0;
+      font-size: 2rem;
       color: #003366;
       text-align: center;
     }
 
     ul {
       list-style-type: disc;
-      font-size: 4.5vw;
+      font-size: 1.2rem;
       color: #000;
       width: 90%;
-      padding-left: 5vw;
-      margin-bottom: 5vh;
+      max-width: 600px;
+      padding-left: 20px;
+      margin: 0 auto 30px;
     }
 
     li {
-      margin-bottom: 3vw;
+      margin-bottom: 10px;
     }
 
-    .back-text {
-      position: fixed;
-      top: 2vh;
-      left: 4vw;
-      font-size: 4vw;
-      color: white;
-      background-color: #003366;
-      border-radius: 8px;
-      padding: 2vw 4vw;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      z-index: 1000;
-    }
 
-    .back-text:hover {
-      background-color: #002244;
-    }
-
-    /* Tablet & up */
-    @media (min-width: 600px) {
-      h2 {
-        font-size: 4vw;
-      }
-
-      ul {
-        font-size: 3.5vw;
-      }
-
-      .back-text {
-        font-size: 2vw;
-        padding: 1vw 2vw;
-      }
-    }
-
-    /* Desktop & large tablets */
-    @media (min-width: 1024px) {
+    @media (max-width: 768px) {
       .image-container {
-        width: 40vw;
-        height: 40vw;
-        max-width: 400px;
-        max-height: 400px;
+        width: 70vw;
+        height: 70vw;
+      }
+
+
+      ul {
+        font-size: 1rem;
+        padding-left: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .image-container {
+        width: 80vw;
+        height: 80vw;
       }
 
       h2 {
-        font-size: 2rem;
+        font-size: 1.4vm;
       }
 
       ul {
-        font-size: 1.2rem;
-        padding-left: 20px;
-      }
-
-      .back-text {
-        font-size: 1.2rem;
-        padding: 8px 16px;
+        font-size: 0.95rem;
       }
     }
+
+
+
+
+/* Image container should be more responsive */
+
+
+
+
+
+ul {
+  list-style-type: disc;
+  font-size: 4vw;
+  color: #000;
+  width: 90%;
+  max-width: 600px;
+  padding-left: 5vw;
+  margin: 0 auto 30px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+
+/* Desktop-specific refinements */
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  ul {
+    font-size: 1.2rem;
+    padding-left: 20px;
+  }
+
+
+}
+
+
+.back-text {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 1.2rem;
+  color: white;
+ /* font-weight: bold;*/
+  cursor: pointer;
+  background-color: #003366;
+  border-radius: 8px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.back-text:hover {
+  background-color: #003366;
+}
+
   </style>
+
 </head>
 <body>
 
@@ -136,6 +170,8 @@
   <h2>Ingredients:</h2>
 
   <div class="ingredients-container">
+ 
+
     <ul id="ingredients-list">
       <!-- Ingredients will be dynamically injected here -->
     </ul>
@@ -144,22 +180,34 @@
   <!-- Red "Back to Home" Container -->
   <div class="back-text" onclick="goBackHome()">&lt; Back</div>
 
-  <script>
-    const ingredientsData = {
-      "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
-      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
-      "https://images.unsplash.com/photo-1560807707-8cc7778e6627": ["Flour", "Milk", "Eggs", "Syrup"],
-      "https://via.placeholder.com/300": ["Ingredient 1", "Ingredient 2"]
-    };
 
+
+  <script src="amharic.js"></script>
+
+  <script>
+    // Map image URL to ingredients
+// Map image URL to ingredients
+const ingredientsData = {
+  "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
+  "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
+  "https://images.unsplash.com/photo-1560807707-8cc7778e6627": ["Flour", "Milk", "Eggs", "Syrup"],
+  "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/bbb.jpg": ["Pasta", "Tomato Sauce", "Cheese", "Olives", "Basil"],
+  "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/ddd.jpg": ["Tea Leaves", "Water", "Sugar", "Lemon Slice", "Mint"],
+  "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/default.jpg": ["Ingredient 1", "Ingredient 2"]
+};
+
+
+    // Get image URL from query parameters
     const params = new URLSearchParams(window.location.search);
     const imageUrl = params.get('image');
 
     if (imageUrl) {
       document.getElementById('dish-image').src = imageUrl;
+
       const ingredients = ingredientsData[imageUrl] || ["Ingredient 1", "Ingredient 2"];
       const listContainer = document.getElementById('ingredients-list');
-      listContainer.innerHTML = "";
+      listContainer.innerHTML = ""; // Clear any existing content
+
       ingredients.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
@@ -167,8 +215,11 @@
       });
     }
 
+    
+
+    // Function to go back to the home page
     function goBackHome() {
-      window.location.href = 'indexamharic.html';
+      window.location.href = 'indexamharic.html'; // Redirect to the home page
     }
   </script>
 
