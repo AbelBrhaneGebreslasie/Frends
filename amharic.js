@@ -1,5 +1,5 @@
 // Handle clicking on circular food image
-const foodImages = document.querySelectorAll('.food-image'); // Changed variable name for consistency
+const foodImages = document.querySelectorAll('.food-image');
 foodImages.forEach(image => {
   image.addEventListener('click', function (event) {
     event.stopPropagation(); // Don't trigger body click
@@ -15,8 +15,14 @@ foodImages.forEach(image => {
         imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/cr7.jpg";
         break;
       case "Pancakes":
-        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/pancake.jpg"; // example
+        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/pancake.jpg";
         break;
+      case "Pasta": // Add Pasta case
+        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/bbb.jpg"; // Updated Pasta image
+        break;
+      case "Tea":
+        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/ddd.jpg";
+        break;    
       default:
         imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/default.jpg";
     }
