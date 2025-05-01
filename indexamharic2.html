@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,133 +20,121 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 25px; /* increased from 20px */
   background: linear-gradient(135deg, white, rgb(3, 189, 252));
 }
 
-    .image-container {
-      width: 60vw;
-      height: 60vw;
-      max-width: 400px;
-      max-height: 400px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+.image-container {
+  width: 75vw; /* 60vw * 1.25 */
+  height: 75vw;
+  max-width: 500px; /* 400px * 1.25 */
+  max-height: 500px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  border: 5px solid white; /* 4px * 1.25 */
+  box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.2); /* scaled */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
-    h2 {
-      margin: 20px 0 10px 0;
-      font-size: 2rem;
-      color: #003366;
-      text-align: center;
-    }
-
-    ul {
-      list-style-type: disc;
-      font-size: 1.2rem;
-      color: #000;
-      width: 90%;
-      max-width: 600px;
-      padding-left: 20px;
-      margin: 0 auto 30px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-
-    @media (max-width: 768px) {
-      .image-container {
-        width: 70vw;
-        height: 70vw;
-      }
-
-
-      ul {
-        font-size: 1rem;
-        padding-left: 16px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .image-container {
-        width: 80vw;
-        height: 80vw;
-      }
-
-      h2 {
-        font-size: 1.4vm;
-      }
-
-      ul {
-        font-size: 0.95rem;
-      }
-    }
-
-
-
-
-/* Image container should be more responsive */
-
-
-
-
+h2 {
+  margin: 25px 0 12.5px 0; /* increased */
+  font-size: 2.5rem; /* 2rem * 1.25 */
+  color: #003366;
+  text-align: center;
+}
 
 ul {
   list-style-type: disc;
-  font-size: 4vw;
+  font-size: 1.5rem; /* 1.2rem * 1.25 */
   color: #000;
   width: 90%;
-  max-width: 600px;
-  padding-left: 5vw;
-  margin: 0 auto 30px;
+  max-width: 750px; /* 600px * 1.25 */
+  padding-left: 25px; /* 20px * 1.25 */
+  margin: 0 auto 37.5px; /* 30px * 1.25 */
 }
 
 li {
-  margin-bottom: 10px;
+  margin-bottom: 12.5px; /* 10px * 1.25 */
 }
 
+
+@media (max-width: 768px) {
+  .image-container {
+    width: 87.5vw; /* 70vw * 1.25 */
+    height: 87.5vw;
+  }
+
+  ul {
+    font-size: 1.25rem; /* 1rem * 1.25 */
+    padding-left: 20px; /* 16px * 1.25 */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    width: 100vw; /* 80vw * 1.25 capped */
+    height: 100vw;
+  }
+
+  h2 {
+    font-size: 1.75rem; /* 1.4rem approx * 1.25 */
+  }
+
+  ul {
+    font-size: 1.2rem; /* 0.95rem * 1.25 */
+  }
+}
+
+/* Image container should be more responsive */
+
+ul {
+  list-style-type: disc;
+  font-size: 5vw; /* 4vw * 1.25 */
+  color: #000;
+  width: 90%;
+  max-width: 750px; /* 600px * 1.25 */
+  padding-left: 6.25vw; /* 5vw * 1.25 */
+  margin: 0 auto 37.5px; /* 30px * 1.25 */
+}
+
+li {
+  margin-bottom: 12.5px; /* 10px * 1.25 */
+}
 
 /* Desktop-specific refinements */
 @media (min-width: 768px) {
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* 2rem * 1.25 */
   }
 
   ul {
-    font-size: 1.2rem;
-    padding-left: 20px;
+    font-size: 1.5rem; /* 1.2rem * 1.25 */
+    padding-left: 25px; /* 20px * 1.25 */
   }
-
-
 }
-
 
 .back-text {
   position: fixed;
-  top: 10px;
-  left: 10px;
-  font-size: 1.2rem;
+  top: 12.5px; /* 10px * 1.25 */
+  left: 12.5px;
+  font-size: 1.5rem; /* 1.2rem * 1.25 */
   color: white;
- /* font-weight: bold;*/
+  /* font-weight: bold; */
   cursor: pointer;
   background-color: #003366;
-  border-radius: 8px;
-  padding: 8px 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px; /* 8px * 1.25 */
+  padding: 10px 20px; /* 8px 16px * 1.25 */
+  box-shadow: 0 2.5px 7.5px rgba(0, 0, 0, 0.2); /* 0 2px 6px * 1.25 */
   z-index: 1000;
   transition: background-color 0.3s;
 }
@@ -170,8 +157,6 @@ li {
   <h2>Ingredients:</h2>
 
   <div class="ingredients-container">
- 
-
     <ul id="ingredients-list">
       <!-- Ingredients will be dynamically injected here -->
     </ul>
@@ -180,22 +165,18 @@ li {
   <!-- Red "Back to Home" Container -->
   <div class="back-text" onclick="goBackHome()">&lt; Back</div>
 
-
-
   <script src="amharic.js"></script>
 
   <script>
     // Map image URL to ingredients
-// Map image URL to ingredients
-const ingredientsData = {
-  "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
-  "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
-  "https://images.unsplash.com/photo-1560807707-8cc7778e6627": ["Flour", "Milk", "Eggs", "Syrup"],
-  "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/bbb.jpg": ["Pasta", "Tomato Sauce", "Cheese", "Olives", "Basil"],
-  "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/ddd.jpg": ["Tea Leaves", "Water", "Sugar", "Lemon Slice", "Mint"],
-  "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/default.jpg": ["Ingredient 1", "Ingredient 2"]
-};
-
+    const ingredientsData = {
+      "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
+      "https://images.unsplash.com/photo-1560807707-8cc7778e6627": ["Flour", "Milk", "Eggs", "Syrup"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/bbb.jpg": ["Pasta", "Tomato Sauce", "Cheese", "Olives", "Basil"],
+      "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/ddd.jpg": ["Tea Leaves", "Water", "Sugar", "Lemon Slice", "Mint"],
+      "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/default.jpg": ["Ingredient 1", "Ingredient 2"]
+    };
 
     // Get image URL from query parameters
     const params = new URLSearchParams(window.location.search);
@@ -214,8 +195,6 @@ const ingredientsData = {
         listContainer.appendChild(li);
       });
     }
-
-    
 
     // Function to go back to the home page
     function goBackHome() {
