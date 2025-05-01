@@ -20,19 +20,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 26.6px; /* 20px * 1.33 */
+  padding-top: 32px; /* 20px * 1.6 */
   background: linear-gradient(135deg, white, rgb(3, 189, 252));
 }
 
 .image-container {
-  width: 79.8vw; /* 60vw * 1.33 */
-  height: 79.8vw;
-  max-width: 532px; /* 400px * 1.33 */
-  max-height: 532px;
+  width: 96vw; /* 60vw * 1.6 */
+  height: 96vw;
+  max-width: 640px; /* 400px * 1.6 */
+  max-height: 640px;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 50%;
-  border: 5.32px solid white; /* 4px * 1.33 */
-  box-shadow: 0 8px 15.96px rgba(0, 0, 0, 0.2); /* 6px * 1.33, 12px * 1.33 */
+  border: 6.4px solid white; /* 4px * 1.6 */
+  box-shadow: 0 9.6px 19.2px rgba(0, 0, 0, 0.2); /* 6px, 12px * 1.6 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,92 +47,91 @@ body {
 }
 
 h2 {
-  margin: 26.6px 0 13.3px 0; /* 20px, 10px * 1.33 */
-  font-size: 2.66rem; /* 2rem * 1.33 */
+  margin: 32px 0 16px 0; /* 20px and 10px * 1.6 */
+  font-size: 3.2rem; /* 2rem * 1.6 */
   color: #003366;
   text-align: center;
 }
 
 ul {
   list-style-type: disc;
-  font-size: 1.6rem; /* 1.2rem * 1.33 */
+  font-size: 1.92rem; /* 1.2rem * 1.6 */
   color: #000;
   width: 90%;
-  max-width: 798px; /* 600px * 1.33 */
-  padding-left: 26.6px; /* 20px * 1.33 */
-  margin: 0 auto 39.9px; /* 30px * 1.33 */
+  max-width: 960px; /* 600px * 1.6 */
+  padding-left: 32px; /* 20px * 1.6 */
+  margin: 0 auto 48px; /* 30px * 1.6 */
 }
 
 li {
-  margin-bottom: 13.3px; /* 10px * 1.33 */
+  margin-bottom: 16px; /* 10px * 1.6 */
 }
 
 @media (max-width: 768px) {
   .image-container {
-    width: 93.1vw; /* 70vw * 1.33 */
-    height: 93.1vw;
+    width: 112vw; /* 70vw * 1.6 */
+    height: 112vw;
   }
 
   ul {
-    font-size: 1.33rem; /* 1rem * 1.33 */
-    padding-left: 21.3px; /* 16px * 1.33 */
+    font-size: 1.6rem; /* 1rem * 1.6 */
+    padding-left: 25.6px; /* 16px * 1.6 */
   }
 }
 
 @media (max-width: 480px) {
   .image-container {
-    width: 106.4vw; /* 80vw * 1.33 */
-    height: 106.4vw;
+    width: 128vw; /* 80vw * 1.6 */
+    height: 128vw;
   }
 
   h2 {
-    font-size: 1.86rem; /* 1.4rem * 1.33 */
+    font-size: 2.24rem; /* 1.4rem * 1.6 */
   }
 
   ul {
-    font-size: 1.26rem; /* 0.95rem * 1.33 */
+    font-size: 1.52rem; /* 0.95rem * 1.6 */
   }
 }
 
-/* Image container should be more responsive */
+/* Existing responsive font-size override */
 ul {
   list-style-type: disc;
-  font-size: 5.32vw; /* 4vw * 1.33 */
+  font-size: 6.4vw; /* 4vw * 1.6 */
   color: #000;
   width: 90%;
-  max-width: 798px; /* 600px * 1.33 */
-  padding-left: 6.65vw; /* 5vw * 1.33 */
-  margin: 0 auto 39.9px; /* 30px * 1.33 */
+  max-width: 960px;
+  padding-left: 8vw; /* 5vw * 1.6 */
+  margin: 0 auto 48px;
 }
 
 li {
-  margin-bottom: 13.3px; /* 10px * 1.33 */
+  margin-bottom: 16px;
 }
 
 /* Desktop-specific refinements */
 @media (min-width: 768px) {
   h2 {
-    font-size: 2.66rem; /* 2rem * 1.33 */
+    font-size: 3.2rem;
   }
 
   ul {
-    font-size: 1.6rem; /* 1.2rem * 1.33 */
-    padding-left: 26.6px; /* 20px * 1.33 */
+    font-size: 1.92rem;
+    padding-left: 32px;
   }
 }
 
 .back-text {
   position: fixed;
-  top: 13.3px; /* 10px * 1.33 */
-  left: 13.3px;
-  font-size: 1.6rem; /* 1.2rem * 1.33 */
+  top: 16px; /* 10px * 1.6 */
+  left: 16px;
+  font-size: 1.92rem; /* 1.2rem * 1.6 */
   color: white;
-  /* font-weight: bold; */
   cursor: pointer;
   background-color: #003366;
-  border-radius: 10.64px; /* 8px * 1.33 */
-  padding: 10.64px 21.3px; /* 8px 16px * 1.33 */
-  box-shadow: 0 2.66px 7.98px rgba(0, 0, 0, 0.2); /* 0 2px 6px * 1.33 */
+  border-radius: 12.8px; /* 8px * 1.6 */
+  padding: 12.8px 25.6px; /* 8px 16px * 1.6 */
+  box-shadow: 0 3.2px 9.6px rgba(0, 0, 0, 0.2); /* 2px, 6px * 1.6 */
   z-index: 1000;
   transition: background-color 0.3s;
 }
@@ -166,7 +165,6 @@ li {
   <script src="amharic.js"></script>
 
   <script>
-    // Map image URL to ingredients
     const ingredientsData = {
       "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
       "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
@@ -176,7 +174,6 @@ li {
       "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/default.jpg": ["Ingredient 1", "Ingredient 2"]
     };
 
-    // Get image URL from query parameters
     const params = new URLSearchParams(window.location.search);
     const imageUrl = params.get('image');
 
@@ -185,7 +182,7 @@ li {
 
       const ingredients = ingredientsData[imageUrl] || ["Ingredient 1", "Ingredient 2"];
       const listContainer = document.getElementById('ingredients-list');
-      listContainer.innerHTML = ""; // Clear any existing content
+      listContainer.innerHTML = "";
 
       ingredients.forEach(item => {
         const li = document.createElement('li');
@@ -194,9 +191,8 @@ li {
       });
     }
 
-    // Function to go back to the home page
     function goBackHome() {
-      window.location.href = 'indexamharic.html'; // Redirect to the home page
+      window.location.href = 'indexamharic.html';
     }
   </script>
 
