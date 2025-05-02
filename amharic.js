@@ -1,5 +1,5 @@
 // Handle clicking on circular food image
-const foodImages = document.querySelectorAll('.food-image');
+const foodImages = document.querySelectorAll('.food-image'); // Changed variable name for consistency
 foodImages.forEach(image => {
   image.addEventListener('click', function (event) {
     event.stopPropagation(); // Don't trigger body click
@@ -9,20 +9,45 @@ foodImages.forEach(image => {
     // Correct food image URLs
     switch (foodName) {
       case "Caesar Salad":
-        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg";
+        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg";
         break;
       case "Omelette":
-        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/cr7.jpg";
+        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg";
         break;
       case "Pancakes":
-        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/pancake.jpg";
+        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg";
         break;
-      case "Pasta": // Add Pasta case
-        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/bbb.jpg"; // Updated Pasta image
+      case "Banana":
+        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/qqq.jpg";
         break;
-      case "Tea":
-        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/ddd.jpg";
-        break;    
+
+
+      case "Spaghetti Bolognese":
+        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/rr.jpg";
+        break;
+      case "Grilled Chicken":
+        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/uu.jpg";
+        break;
+      case "Steak":
+        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hhh.jpg";
+        break;
+      case "Salmon":/*ኣብዚ ስማት space ከይትሓድግ ኣብነት "Salmon" ዝነበረ "Salmon " ተጌርካዮ ኣይሰርሐልካን ። */
+        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/pp.jpg";
+        break;
+
+
+        case "Coffee":
+        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/sss.jpg";
+        break;
+      case "Orange Juice":
+        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/tt.jpg";
+        break;
+      case "Chocolate Cake":
+        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/ggg.jpg";
+        break;
+      case "Ice Cream":
+        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rrr.jpg";
+        break;
       default:
         imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/default.jpg";
     }
