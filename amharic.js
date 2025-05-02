@@ -8,44 +8,44 @@ foodImages.forEach(image => {
 
     // Correct food image URLs
     switch (foodName) {
-      case "Caesar Salad":
+      case "እንቁላል":
         imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg";
         break;
-      case "Omelette":
+      case "በርገር":
         imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg";
         break;
-      case "Pancakes":
+      case "ፓስታ":
         imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg";
         break;
-      case "Banana":
+      case "ላዛኛ":
         imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/qqq.jpg";
         break;
 
 
-      case "Spaghetti Bolognese":
+      case "እንጀራ":
         imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/rr.jpg";
         break;
-      case "Grilled Chicken":
+      case "ጥብስ":
         imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/uu.jpg";
         break;
-      case "Steak":
+      case "በያይነቱ":
         imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hhh.jpg";
         break;
-      case "Salmon":/*ኣብዚ ስማት space ከይትሓድግ ኣብነት "Salmon" ዝነበረ "Salmon " ተጌርካዮ ኣይሰርሐልካን ። */
+      case "ሽሮ":/*ኣብዚ ስማት space ከይትሓድግ ኣብነት "Salmon" ዝነበረ "Salmon " ተጌርካዮ ኣይሰርሐልካን ። */
         imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/pp.jpg";
         break;
 
 
-        case "Coffee":
+        case "ለስላሳ":
         imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/sss.jpg";
         break;
-      case "Orange Juice":
+      case "ወተት":
         imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/tt.jpg";
         break;
-      case "Chocolate Cake":
+      case "የቾከሌት ኬክ":
         imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/ggg.jpg";
         break;
-      case "Ice Cream":
+      case "ስትሮበሪ ኬክ":
         imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rrr.jpg";
         break;
       default:
