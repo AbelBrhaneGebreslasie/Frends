@@ -1,8 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dish Detail</title>
 
   <style>
@@ -54,17 +54,86 @@ body {
       text-align: center;
     }
 
-
-    /* Text under image */
     ul {
-      text-align: left;
-      font-size: 18px;
-      color: #333;
-      line-height: 1.6;
-      padding: 0 20px;
+      list-style-type: disc;
+      font-size: 1.2rem;
+      color: #000;
+      width: 90%;
+      max-width: 600px;
+      padding-left: 20px;
+      margin: 0 auto 30px;
+    }
+
+    li {
+      margin-bottom: 10px;
     }
 
 
+    @media (max-width: 768px) {
+      .image-container {
+        width: 70vw;
+        height: 70vw;
+      }
+
+
+      ul {
+        font-size: 1rem;
+        padding-left: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .image-container {
+        width: 80vw;
+        height: 80vw;
+      }
+
+      h2 {
+        font-size: 1.4vm;
+      }
+
+      ul {
+        font-size: 0.95rem;
+      }
+    }
+
+
+
+
+/* Image container should be more responsive */
+
+
+
+
+
+ul {
+  list-style-type: disc;
+  font-size: 4vw;
+  color: #000;
+  width: 90%;
+  max-width: 600px;
+  padding-left: 5vw;
+  margin: 0 auto 30px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+
+/* Desktop-specific refinements */
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  ul {
+    font-size: 1.2rem;
+    padding-left: 20px;
+  }
+
+
+}
 
 
 .back-text {
@@ -117,16 +186,22 @@ body {
 
   <script>
     // Map image URL to ingredients
-// Map image URL to ingredients
-const ingredientsData = {
-  "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
-  "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
-  "https://images.unsplash.com/photo-1560807707-8cc7778e6627": ["Flour", "Milk", "Eggs", "Syrup"],
-  "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/bbb.jpg": ["Pasta", "Tomato Sauce", "Cheese", "Olives", "Basil"],
-  "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/ddd.jpg": ["Tea Leaves", "Water", "Sugar", "Lemon Slice", "Mint"],
-  "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/default.jpg": ["Ingredient 1", "Ingredient 2"]
-};
+    const ingredientsData = {
+      "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg": ["Flour", "Milk", "Eggs", "Syrup"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/qqq.jpg": ["Banana", "Sugar", "Honey", "Cinnamon"],
 
+      "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/rr.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/uu.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hhh.jpg": ["Flour", "Milk", "Eggs", "Syrup"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/pp.jpg": ["Banana", "Sugar", "Honey", "Cinnamon"],
+
+      "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/sss.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/tt.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/ggg.jpg": ["Flour", "Milk", "Eggs", "Syrup"],
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rrr.jpg": ["Banana", "Sugar", "Honey", "Cinnamon"],     "https://via.placeholder.com/300": ["Ingredient 1", "Ingredient 2"]
+    };
 
     // Get image URL from query parameters
     const params = new URLSearchParams(window.location.search);
