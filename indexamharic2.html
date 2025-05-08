@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+i need the whole code to be flexible <!DOCTYPE html>
+
 <html lang="en">
 <head>
    <meta charset="UTF-8">
@@ -6,7 +7,7 @@
   <title>Dish Detail</title>
   <!-- Link to the favicon (icon displayed in browser tab) -->
   <link rel="icon" href="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/Ab_All_Logo.png" type="image/png">
-  
+
   <style>
     html, body {
       margin: 0;
@@ -69,7 +70,7 @@
         height: 80vw;
       }
 
-      h2 {
+      h4 {
         font-size: 1.4vm;
       }
 
@@ -80,7 +81,7 @@
 
     /* Desktop-specific refinements */
     @media (min-width: 768px) {
-      h2 {
+      h4 {
         font-size: 2rem;
       }
 
@@ -90,13 +91,32 @@
       }
     }
 
-    /* Style for Back Button */
-    .back-text {
+  
+
+  
+
+  
+
+
+
+
+
+
+/* Align the ingredients list to the left */
+.ingredients-container {
+      display: flex;
+      justify-content: flex-start; /* Align list container to the left */
+      width: 100%;
+      padding-left: 80px;
+    }
+
+  /* Style for Back Button */
+  .back-text {
       padding: 12px 24px;
       background-color: #003366;
       color: white;
       border-radius: 6px;
-      font-size: 1rem;
+      font-size: 2rem;
       border: none;
       cursor: pointer;
       transition: background-color 0.3s;
@@ -109,17 +129,9 @@
       background-color: #0055aa;
     }
 
-    /* Align the ingredients list to the left */
-    .ingredients-container {
-      display: flex;
-      justify-content: flex-start; /* Align list container to the left */
-      width: 100%;
-      padding-left: 80px;
-    }
-
     ul {
       list-style-type: disc;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #000;
       width: 90%;
       max-width: 600px;
@@ -128,26 +140,30 @@
       text-align: left; 
     }
 
-    h2 {
+    h4 {
       margin: 20px 0 10px 0;
-      font-size: 2rem;
+      font-size: 3rem;
       color: #003366;
       text-align: left; 
     }
 
   </style>
+
 </head>
 <body>
 
   <!-- Image Container -->
+
   <div class="image-container">
     <img id="dish-image" src="" alt="Food Image">
   </div>
 
   <!-- Ingredients Header -->
-  <h2><u>Ingredients</u></h2>
+
+  <h4><u>Ingredients</u></h4>
 
   <!-- Ingredients List (Aligned to Left) -->
+
   <div class="ingredients-container">
     <ul id="ingredients-list">
       <!-- Ingredients will be dynamically injected here -->
@@ -155,6 +171,7 @@
   </div>
 
   <!-- Red "Back to Home" Container -->
+
   <div class="back-text" onclick="goBackHome()">Back to Home</div>
 
   <script src="amharic.js"></script>
