@@ -140,24 +140,30 @@ li {
 }
 
 
+/* Style for Back Button */
 .back-text {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  font-size: 1.2rem;
-  color: white;
- /* font-weight: bold;*/
-  cursor: pointer;
+  padding: 12px 24px;
   background-color: #003366;
-  border-radius: 8px;
-  padding: 8px 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  transition: background-color 0.3s;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
 }
 
 .back-text:hover {
-  background-color: #003366;
+  background-color: #0055aa;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .back-text {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
 }
 
   </style>
@@ -182,7 +188,8 @@ li {
   </div>
 
   <!-- Red "Back to Home" Container -->
-  <div class="back-text" onclick="goBackHome()">&lt; Back</div>
+  <div class="back-text" onclick="goBackHome()">Back to Home</div>
+
 
 
 
