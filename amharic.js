@@ -67,10 +67,13 @@ searchInput.addEventListener('input', function () {
 
   foodItems.forEach(item => {
     const foodName = item.getAttribute('data-name').toLowerCase(); // Get the food name and make it lowercase
-    if (foodName.includes(searchTerm)) {
-      item.style.display = 'block'; // Show the item if it matches the search
+    const foodCategory = item.getAttribute('data-category') ? item.getAttribute('data-category').toLowerCase() : ""; // Get the food category (breakfast, lunch, etc.)
+
+    // Show item if food name or category includes the search term
+    if (foodName.includes(searchTerm) || foodCategory.includes(searchTerm)) {
+      item.style.display = 'block'; // Show the item if it matches the search term
     } else {
-      item.style.display = 'none'; // Hide the item if it doesn't match the search
+      item.style.display = 'none'; // Hide the item if it doesn't match the search term
     }
   });
 });
