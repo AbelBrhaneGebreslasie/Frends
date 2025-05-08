@@ -202,26 +202,26 @@
     <div class="section">
       <h2>🍳 Breakfast</h2>
       <!-- Existing food items -->
-      <div class="item" data-name="Caesar Salad" onclick="showIngredients('Caesar Salad')">
+      <div class="item" data-name="Caesar Salad" data-category="breakfast" onclick="showIngredients('Caesar Salad')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg" alt="hi Image">
         </div>
         <p>Caesar Salad - $8 (65 birr)</p>
       </div>
-      <div class="item" data-name="Omelette" onclick="showIngredients('Omelette')">
+      <div class="item" data-name="Omelette" data-category="breakfast" onclick="showIngredients('Omelette')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg" alt="oppp Image">
         </div>
         <p>Omelette - $5 (22 birr) <span class="fasting-label">Fasting</span></p>
       </div>
-      <div class="item" data-name="Pancakes" onclick="showIngredients('Pancakes')">
+      <div class="item" data-name="Pancakes" data-category="breakfast" onclick="showIngredients('Pancakes')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg" alt="oppp Image">
         </div>
         <p>Pancakes - $4 (45 birr)</p>
       </div>
       <!-- New Banana item with the provided image -->
-      <div class="item" data-name="Banana" onclick="showIngredients('Banana')">
+      <div class="item" data-name="Banana" data-category="breakfast" onclick="showIngredients('Banana')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/qqq.jpg" alt="oppp Image">
         </div>
@@ -233,13 +233,13 @@
     <!-- Lunch Section -->
     <div class="section">
       <h2>🍝 Lunch</h2>
-      <div class="item" data-name="Spaghetti Bolognese" onclick="showIngredients('Spaghetti')">
+      <div class="item" data-name="Spaghetti Bolognese" data-category="Lunch" onclick="showIngredients('Spaghetti')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/rr.jpg" alt="oppp Image">
         </div>
         <p>Spaghetti Bolognese - $10 (38 birr)</p>
       </div>
-      <div class="item" data-name="Grilled Chicken" onclick="showIngredients('Grilled Chicken')">
+      <div class="item" data-name="Grilled Chicken" data-category="Lunch" onclick="showIngredients('Grilled Chicken')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/uu.jpg" alt="oppp Image">
         </div>
@@ -249,13 +249,13 @@
     <!-- Dinner Section -->
     <div class="section">
       <h2>🍲 Dinner</h2>
-      <div class="item" data-name="Steak" onclick="showIngredients('Steak')">
+      <div class="item" data-name="Steak" data-category="Dinner" onclick="showIngredients('Steak')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/hhh.jpg" alt="oppp Image">
         </div>
         <p>Steak - $18 (55 birr)</p>
       </div>
-      <div class="item" data-name="Salmon" onclick="showIngredients('Salmon')">
+      <div class="item" data-name="Salmon" data-category="Dinner" onclick="showIngredients('Salmon')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/pp.jpg" alt="oppp Image">
         </div>
@@ -267,13 +267,13 @@
     <!-- Drinks Section -->
     <div class="section">
       <h2>☕ Drinks</h2>
-      <div class="item" data-name="Coffee" onclick="showIngredients('Coffee')">
+      <div class="item" data-name="Coffee" data-category="Drinks" onclick="showIngredients('Coffee')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/sss.jpg" alt="oppp Image">
         </div>
         <p>Coffee - $3 (12 birr)</p>
       </div>
-      <div class="item" data-name="Orange Juice" onclick="showIngredients('Orange Juice')">
+      <div class="item" data-name="Orange Juice" data-category="Drinks" onclick="showIngredients('Orange Juice')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/tt.jpg" alt="oppp Image">
         </div>
@@ -283,13 +283,13 @@
     <!-- Desserts Section -->
     <div class="section">
       <h2>🍰 Desserts</h2>
-      <div class="item" data-name="Chocolate Cake" onclick="showIngredients('Chocolate Cake')">
+      <div class="item" data-name="Chocolate Cake" data-category="Desserts" onclick="showIngredients('Chocolate Cake')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/ggg.jpg" alt="oppp Image">
         </div>
         <p>Chocolate Cake - $6 (35 birr)</p>
       </div>
-      <div class="item" data-name="Ice Cream" onclick="showIngredients('Ice Cream')">
+      <div class="item" data-name="Ice Cream" data-category="Desserts" onclick="showIngredients('Ice Cream')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/rrr.jpg" alt="oppp Image">
         </div>
@@ -383,22 +383,25 @@
       });
     
       // Search functionality
-      const searchInput = document.getElementById('searchInput'); // Get the search input field
-      const foodItems = document.querySelectorAll('.item'); // All food items
-    
-      // Event listener to filter items as user types
-      searchInput.addEventListener('input', function () {
-        const searchTerm = searchInput.value.toLowerCase().trim(); // Get the search query and make it lowercase
-    
-        foodItems.forEach(item => {
-          const foodName = item.getAttribute('data-name').toLowerCase(); // Get the food name and make it lowercase
-          if (foodName.includes(searchTerm)) {
-            item.style.display = 'block'; // Show the item if it matches the search
-          } else {
-            item.style.display = 'none'; // Hide the item if it doesn't match the search
-          }
-        });
-      });
+ const searchInput = document.getElementById('searchInput'); // Get the search input field
+const foodItems = document.querySelectorAll('.item'); // All food items
+
+// Event listener to filter items as user types
+searchInput.addEventListener('input', function () {
+  const searchTerm = searchInput.value.toLowerCase().trim(); // Get the search query and make it lowercase
+
+  foodItems.forEach(item => {
+    const foodName = item.getAttribute('data-name').toLowerCase(); // Get the food name and make it lowercase
+    const foodCategory = item.getAttribute('data-category') ? item.getAttribute('data-category').toLowerCase() : ""; // Get the food category (breakfast, lunch, etc.)
+
+    // Show item if food name or category includes the search term
+    if (foodName.includes(searchTerm) || foodCategory.includes(searchTerm)) {
+      item.style.display = 'block'; // Show the item if it matches the search term
+    } else {
+      item.style.display = 'none'; // Hide the item if it doesn't match the search term
+    }
+  });
+});
     </script>
     
     
