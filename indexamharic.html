@@ -40,7 +40,7 @@
       right: 20px;
       width: 50px;
       height: 50px;
-      background-image: url('https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/AB5.jpg');
+      background-image: url('https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/AB5.jpg');
       background-size: cover;
       background-position: center;
       border-radius: 50%;
@@ -115,7 +115,7 @@
   <div class="section">
     <h2>🍳 ቁርስ</h2>
     <div class="item" data-name="እንቁላል" data-category="ቁርስ">
-      <div class="food-image"><img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg"></div>
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/ff.jpg"></div>
       <p><strong>እንቁላል -</strong> $8 (65 ብር) <span class="fasting-label">የ ፆም</span></p>
     </div>
     <div class="item" data-name="በርገር" data-category="ቁርስ">
@@ -155,7 +155,7 @@
   <div class="section">
     <h2>☕ ሚጠጣ</h2>
     <div class="item" data-name="ለስላሳ" data-category="ሚጠጣ">
-      <div class="food-image"><img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/sss.jpg"></div>
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/sss.jpg"></div>
       <p><strong>ለስላሳ -</strong> $8 (65 ብር)</p>
     </div>
     <div class="item" data-name="ወተት" data-category="ሚጠጣ">
@@ -172,17 +172,19 @@
         const foodName = this.getAttribute("data-name");
         let imageUrl = "";
 
-        // Map Amharic names to correct images
+        // Standardized all URLs to use uppercase "AbelBrhaneGebreslasie"
+        const base = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/";
+
         switch (foodName) {
-          case "እንቁላል": imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg"; break;
-          case "በርገር": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg"; break;
-          case "ፓስታ": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg"; break;
-          case "እንጀራ": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rr.jpg"; break;
-          case "ጥብስ": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/uu.jpg"; break;
-          case "በያይነቱ": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hhh.jpg"; break;
-          case "ሽሮ": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/pp.jpg"; break;
-          case "ለስላሳ": imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/sss.jpg"; break;
-          case "ወተት": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/tt.jpg"; break;
+          case "እንቁላል": imageUrl = base + "ff.jpg"; break;
+          case "በርገር": imageUrl = base + "hh.jpg"; break;
+          case "ፓስታ": imageUrl = base + "kk.jpg"; break;
+          case "እንጀራ": imageUrl = base + "rr.jpg"; break;
+          case "ጥብስ": imageUrl = base + "uu.jpg"; break;
+          case "በያይነቱ": imageUrl = base + "hhh.jpg"; break;
+          case "ሽሮ": imageUrl = base + "pp.jpg"; break;
+          case "ለስላሳ": imageUrl = base + "sss.jpg"; break;
+          case "ወተት": imageUrl = base + "tt.jpg"; break;
           default: imageUrl = "https://via.placeholder.com/300";
         }
 
