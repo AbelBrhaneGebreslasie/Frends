@@ -1,4 +1,3 @@
-
 // main.js
 
 // Handle clicking on circular food image
@@ -11,7 +10,7 @@ foodImages.forEach(image => {
 
     switch (foodName) {
       case "Caesar Salad":
-        imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/nnn.jpg";
+        imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg";
         break;
       case "Omelette":
         imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/cr7.jpg";
