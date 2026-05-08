@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hotel Food Menu</title>
-  <!-- Link to the favicon (icon displayed in browser tab) -->
-  <link rel="icon" href="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/Ab_All_Logo.png" type="image/png">
-
   <link rel="stylesheet" href="style.css" />
   <style>
     /* Container for language and developer button */
@@ -47,7 +44,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 50%;
-  border: 2px solid #fff;
+  /* border: 2px solid #fff;*/
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   z-index: 100;
@@ -149,27 +146,26 @@
     <div class="section">
       <h2>🍳 ቁርስ</h2>
       <!-- Existing food items -->
-      <!-- ዙምግቢ እዚ ንቁርሲ ንምሳሕውን ይከውን እዩ ትብል ተደሊካ ብኮማ ትፈልዮም ማለት ቁርሲ ኢሎም ሰርች ትገብሩ ተለው ይኩን ምሳሕ ኢሎም ሰርች ትገብሩ ተለዉ ዙ ምግቢ እዚ ይመፆም ማለት እዩ ። <div class="item" data-name="እንቁላል" data-category="ቁርስ,ምሳ" onclick="showIngredients('እንቁላል')"> -->
-<div class="item" data-name="እንቁላል" data-img="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg">
-  <div class="food-image">
-    <img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg">
-  </div>
-  <p><strong>እንቁላል -</strong> $8 (65 ብር)</p>
-</div>
-      <div class="item" data-name="በርገር" data-category="ቁርስ" onclick="showIngredients('በርገር')">
+      <div class="item" data-name="እንቁላል" onclick="showIngredients('እንቁላል')">
+        <div class="food-image">
+          <img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg" alt="hi Image">
+        </div>
+        <p><strong>እንቁላል -</strong>  $8 <strong>(65 ብር)</strong><span class="fasting-label">የ ፆም</span></p>
+      </div>
+      <div class="item" data-name="በርገር" onclick="showIngredients('በርገር')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg" alt="oppp Image">
         </div>
         <p><strong>በርገር -</strong>  $8 <strong>(65 ብር)</strong></p>      
       </div>
-      <div class="item" data-name="ፓስታ" data-category="ቁርስ" onclick="showIngredients('ፓስታ')">
+      <div class="item" data-name="ፓስታ" onclick="showIngredients('ፓስታ')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg" alt="oppp Image">
         </div>
         <p><strong>ፓስታ -</strong>  $8 <strong>(65 ብር)</strong></p>      
       </div>
       <!-- New Banana item with the provided image -->
-      <div class="item" data-name="ላዛኛ" data-category="ቁርስ" onclick="showIngredients('ላዛኛ')">
+      <div class="item" data-name="ላዛኛ" onclick="showIngredients('ላዛኛ')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/qqq.jpg" alt="oppp Image">
         </div>
@@ -181,13 +177,13 @@
     <!-- Lunch Section -->
     <div class="section">
       <h2>🍝 ምሳ</h2>
-      <div class="item" data-name="እንጀራ" data-category="ምሳ" onclick="showIngredients('እንጀራ')">
+      <div class="item" data-name="እንጀራ" onclick="showIngredients('እንጀራ')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/rr.jpg" alt="oppp Image">
         </div>
         <p><strong>እንጀራ -</strong>  $8 <strong>(65 ብር)</strong></p>      
       </div>
-      <div class="item" data-name="ጥብስ" data-category="ምሳ" onclick="showIngredients('ጥብስ')">
+      <div class="item" data-name="ጥብስ" onclick="showIngredients('ጥብስ')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/uu.jpg" alt="oppp Image">
         </div>
@@ -197,13 +193,13 @@
     <!-- Dinner Section -->
     <div class="section">
       <h2>🍲 እራት</h2>
-      <div class="item" data-name="በያይነቱ" data-category="እራት" onclick="showIngredients('በያይነቱ')">
+      <div class="item" data-name="በያይነቱ" onclick="showIngredients('በያይነቱ')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/hhh.jpg" alt="oppp Image">
         </div>
         <p><strong>በያይነቱ -</strong>  $8 <strong>(65 ብር)</strong></p>
       </div>
-      <div class="item" data-name="ሽሮ" data-category="እራት" onclick="showIngredients('ሽሮ')">
+      <div class="item" data-name="ሽሮ" onclick="showIngredients('ሽሮ')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/pp.jpg" alt="oppp Image">
         </div>
@@ -215,13 +211,13 @@
     <!-- Drinks Section -->
     <div class="section">
       <h2>☕ ሚጠጣ</h2>
-      <div class="item" data-name="ለስላሳ" data-category="ሚጠጣ" onclick="showIngredients('ለስላሳ')">
+      <div class="item" data-name="ለስላሳ" onclick="showIngredients('ለስላሳ')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/sss.jpg" alt="oppp Image">
         </div>
         <p><strong>ለስላሳ -</strong>  $8 <strong>(65 ብር)</strong></p>
       </div>
-      <div class="item" data-name="ወተት" data-category="ሚጠጣ" onclick="showIngredients('ወተት')">
+      <div class="item" data-name="ወተት" onclick="showIngredients('ወተት')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/tt.jpg" alt="oppp Image">
         </div>
@@ -231,13 +227,13 @@
     <!-- Desserts Section -->
     <div class="section">
       <h2>🍰 ማጣጣሚያ</h2>
-      <div class="item" data-name="የቾከሌት ኬክ" data-category="ማጣጣሚያ" onclick="showIngredients('የቾከሌት ኬክ')">
+      <div class="item" data-name="የቾከሌት ኬክ" onclick="showIngredients('የቾከሌት ኬክ')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/ggg.jpg" alt="oppp Image">
         </div>
         <p><strong>የቾከሌት ኬክ -</strong>  $8 <strong>(65 ብር)</strong></p>
       </div>
-      <div class="item" data-name="ስትሮበሪ ኬክ" data-category="ማጣጣሚያ" onclick="showIngredients('ስትሮበሪ ኬክ')">
+      <div class="item" data-name="ስትሮበሪ ኬክ" onclick="showIngredients('ስትሮበሪ ኬክ')">
         <div class="food-image">
           <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/rrr.jpg" alt="oppp Image">
         </div>
@@ -273,18 +269,29 @@
 
     // Handle clicking on circular food image
     const foodImages = document.querySelectorAll('.food-image');
-const allItems = document.querySelectorAll('.item');
+    foodImages.forEach(image => {
+      image.addEventListener('click', function (event) {
+        event.stopPropagation();
+        const foodName = image.parentElement.getAttribute("data-name");
+        let imageUrl = "";
 
-allItems.forEach(item => {
-  item.addEventListener('click', function() {
-    // This grabs the URL directly from the HTML 'data-img'
-    const imageUrl = this.getAttribute('data-img');
-    
-    if (imageUrl) {
-      window.location.href = `indexamharic2.html?image=${encodeURIComponent(imageUrl)}`;
-    }
-  });
-});
+        switch (foodName) {
+          case "Caesar Salad":
+            imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/nnn.jpg";
+            break;
+          case "Omelette":
+            imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/cr7.jpg";
+            break;
+          case "Pancakes":
+            imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/pancake.jpg";
+            break;
+          default:
+            imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/default.jpg";
+        }
+
+        window.location.href = `indexamharic2.html?image=${encodeURIComponent(imageUrl)}`;
+      });
+    });
 
     // Search functionality
     const searchInput = document.getElementById('searchInput');
