@@ -4,13 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hotel Food Menu</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    /* Container for language and developer button */
     .header-container {
       position: absolute;
       top: 10px;
-      left: 80px; /* Move it right next to Arabic container */
+      left: 80px;
       display: flex;
       gap: 20px;
       align-items: center;
@@ -19,304 +17,138 @@
 
     .language-selector {
       position: relative;
-      
       border-radius: 5px;
       padding: 5px;
       cursor: pointer;
       z-index: 100;
-    }
-
-    .language-selector select {
-      font-size: 16px;
-      border: none;
-      background: transparent;
-      outline: none;
-      cursor: pointer;
+      background: white;
     }
 
     .developer-container {
-  position: absolute;
-  top: 10px;
-  right: 20px; /* Place in top-right corner */
-  width: 50px;
-  height: 50px;
-  background-image: url('https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/AB5.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  /* border: 2px solid #fff;*/
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  z-index: 100;
-}
-
-
-    .welcome-container {
-      margin-top: 70px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 0px;
-    }
-
-    .section {
-      margin: 20px 0;
-    }
-    
-    /* New Arabic Container in Top Left */
-    .arabic-container {
       position: absolute;
-      top: 20px;
-      left: 20px; /* Position it to the left */
-      background-color: white;
-      border-radius: 5px;
-      padding: 5px;
+      top: 10px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-image: url('https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/AB5.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
       cursor: pointer;
       z-index: 100;
     }
 
-    .arabic-container span {
-      font-size: 16px;
-   /*    font-weight: bold; */ 
-      color: #333;
+    .welcome-container { margin-top: 70px; text-align: center; }
+    h1 { font-size: 32px; margin-bottom: 0px; }
+    
+    .arabic-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: white;
+      border-radius: 5px;
+      padding: 5px;
+      z-index: 100;
     }
 
-/* Adjust the gap between the search bar and the breakfast section */
-.search-container {
-  margin-bottom: 20px; /* Adjust the gap between the search bar and the next section */
-}
+    .search-container { margin: 20px; text-align: center; }
+    #searchInput { padding: 10px; width: 80%; border-radius: 5px; border: 1px solid #ccc; }
 
-.section {
-  margin-top: 20px; /* Adjust the space above the breakfast section */
-}
-
-
-/* Change color of the entire <p> text (including the Fasting label) to red */
-  .item p {
-  color: black; /* Set the color of the whole text to red */
-  
-}
-
-/* Alternatively, you can style just the fasting label with a specific color */
-.fasting-label {
-  color: white; /* Set the color of the fasting label to red */
-  background-color:green
-}
-
+    .section { margin: 20px; }
+    .item { 
+      display: flex; 
+      align-items: center; 
+      gap: 15px; 
+      margin-bottom: 15px; 
+      background: #f9f9f9; 
+      padding: 10px; 
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .food-image img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+    .fasting-label { color: white; background-color: green; padding: 2px 5px; border-radius: 3px; font-size: 12px; margin-left: 5px; }
   </style>
 </head>
 
 <body>
-  <!-- New Arabic Container in Top Left -->
-  <div class="arabic-container">
-    <span>አማርኛ</span> <!-- Arabic text to display -->
-  </div>
+  <div class="arabic-container"><span>አማርኛ</span></div>
 
-  <!-- Container to hold both elements with a gap between them -->
   <div class="header-container">
-    <!-- Language Selector -->
     <div class="language-selector" onclick="toggleLanguage()">
       <span id="language-text">English</span>
     </div>
   </div>
-   <!-- Developer Button -->
-<div class="developer-container" onclick="goToDeveloperPage()"></div>
 
-<script>
-  // Navigate to developer page when developer button is clicked
-  function goToDeveloperPage() {
-    console.log('Navigating to developer.html');
-    window.location.href = "developeramharic.html"; // Redirect to the developer page
-  }
-</script>
+  <div class="developer-container" onclick="goToDeveloperPage()"></div>
 
-  <!-- Welcome Section -->
   <div class="welcome-container">
     <h1>እንኳን ወደ ፕላኔት ሆቴል ሜኑ በደህና መጡ</h1>
   </div>
 
-  <!-- Search Bar -->
   <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search for a dish..." onkeyup="searchMenu()">
+    <input type="text" id="searchInput" placeholder="ምግብ ይፈልጉ..." onkeyup="searchMenu()">
   </div>
 
-    <!-- Breakfast Section -->
-    <div class="section">
-      <h2>🍳 ቁርስ</h2>
-      <!-- Existing food items -->
-      <div class="item" data-name="እንቁላል" onclick="showIngredients('እንቁላል')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg" alt="hi Image">
-        </div>
-        <p><strong>እንቁላል -</strong>  $8 <strong>(65 ብር)</strong><span class="fasting-label">የ ፆም</span></p>
-      </div>
-      <div class="item" data-name="በርገር" onclick="showIngredients('በርገር')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg" alt="oppp Image">
-        </div>
-        <p><strong>በርገር -</strong>  $8 <strong>(65 ብር)</strong></p>      
-      </div>
-      <div class="item" data-name="ፓስታ" onclick="showIngredients('ፓስታ')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg" alt="oppp Image">
-        </div>
-        <p><strong>ፓስታ -</strong>  $8 <strong>(65 ብር)</strong></p>      
-      </div>
-      <!-- New Banana item with the provided image -->
-      <div class="item" data-name="ላዛኛ" onclick="showIngredients('ላዛኛ')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/qqq.jpg" alt="oppp Image">
-        </div>
-        <p><strong>ላዛኛ -</strong>  $8 <strong>(65 ብር)</strong></p>      
-      </div>
+  <!-- Breakfast Section -->
+  <div class="section">
+    <h2>🍳 ቁርስ</h2>
+    <div class="item" data-name="እንቁላል">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg"></div>
+      <p><strong>እንቁላል -</strong> 65 ብር <span class="fasting-label">የ ፆም</span></p>
     </div>
-    
-  
-    <!-- Lunch Section -->
-    <div class="section">
-      <h2>🍝 ምሳ</h2>
-      <div class="item" data-name="እንጀራ" onclick="showIngredients('እንጀራ')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/rr.jpg" alt="oppp Image">
-        </div>
-        <p><strong>እንጀራ -</strong>  $8 <strong>(65 ብር)</strong></p>      
-      </div>
-      <div class="item" data-name="ጥብስ" onclick="showIngredients('ጥብስ')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/uu.jpg" alt="oppp Image">
-        </div>
-        <p><strong>ጥብስ -</strong>  $8 <strong>(65 ብር)</strong></p>      
-      </div>
+    <div class="item" data-name="በርገር">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg"></div>
+      <p><strong>በርገር -</strong> 65 ብር</p>
     </div>
-    <!-- Dinner Section -->
-    <div class="section">
-      <h2>🍲 እራት</h2>
-      <div class="item" data-name="በያይነቱ" onclick="showIngredients('በያይነቱ')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/hhh.jpg" alt="oppp Image">
-        </div>
-        <p><strong>በያይነቱ -</strong>  $8 <strong>(65 ብር)</strong></p>
-      </div>
-      <div class="item" data-name="ሽሮ" onclick="showIngredients('ሽሮ')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/pp.jpg" alt="oppp Image">
-        </div>
-        <p>ሽሮ - $16</p>
-      </div>
+    <div class="item" data-name="ፓስታ">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg"></div>
+      <p><strong>ፓስታ -</strong> 65 ብር</p>
     </div>
-  
-    
-    <!-- Drinks Section -->
-    <div class="section">
-      <h2>☕ ሚጠጣ</h2>
-      <div class="item" data-name="ለስላሳ" onclick="showIngredients('ለስላሳ')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/sss.jpg" alt="oppp Image">
-        </div>
-        <p><strong>ለስላሳ -</strong>  $8 <strong>(65 ብር)</strong></p>
-      </div>
-      <div class="item" data-name="ወተት" onclick="showIngredients('ወተት')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/tt.jpg" alt="oppp Image">
-        </div>
-        <p><strong>ወተት -</strong>  $8 <strong>(65 ብር)</strong></p>
-      </div>
-    </div>
-    <!-- Desserts Section -->
-    <div class="section">
-      <h2>🍰 ማጣጣሚያ</h2>
-      <div class="item" data-name="የቾከሌት ኬክ" onclick="showIngredients('የቾከሌት ኬክ')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/ggg.jpg" alt="oppp Image">
-        </div>
-        <p><strong>የቾከሌት ኬክ -</strong>  $8 <strong>(65 ብር)</strong></p>
-      </div>
-      <div class="item" data-name="ስትሮበሪ ኬክ" onclick="showIngredients('ስትሮበሪ ኬክ')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/rrr.jpg" alt="oppp Image">
-        </div>
-        <p><strong>ስትሮበሪ ኬክ -</strong>  $8 <strong>(65 ብር)</strong><span class="fasting-label">የ ፆም</span></p>
-      </div>
-    </div>
-  
-
-  <!-- Modal -->
-  <div id="modal" class="modal" onclick="closeModal()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <h2 id="dish-name"></h2>
-      <p id="ingredients-text"></p>
-      <div id="ingredients-images" class="image-container"></div>
+    <div class="item" data-name="ላዛኛ">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/qqq.jpg"></div>
+      <p><strong>ላዛኛ -</strong> 65 ብር</p>
     </div>
   </div>
 
-  <script src="amharic.js"></script>
+  <!-- Lunch Section -->
+  <div class="section">
+    <h2>🍝 ምሳ</h2>
+    <div class="item" data-name="እንጀራ">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/rr.jpg"></div>
+      <p><strong>እንጀራ -</strong> 65 ብር</p>
+    </div>
+    <div class="item" data-name="ጥብስ">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/uu.jpg"></div>
+      <p><strong>ጥብስ -</strong> 65 ብር</p>
+    </div>
+  </div>
 
   <script>
-    function changeLanguage() {
-      const language = document.getElementById("language").value;
-      if (language === "en") {
-        window.location.href = "index.html";
-      } else if (language === "am") {
-        window.location.href = "indexamharic.html";
-      }
+    // NAVIGATION FIX: Click handler for every food item
+    document.querySelectorAll('.item').forEach(item => {
+      item.addEventListener('click', function() {
+        const img = this.querySelector('img').src;
+        window.location.href = `indexamharic2.html?image=${encodeURIComponent(img)}`;
+      });
+    });
+
+    function searchMenu() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let items = document.querySelectorAll('.item');
+      items.forEach(item => {
+        let name = item.getAttribute('data-name').toLowerCase();
+        item.style.display = name.includes(input) ? "flex" : "none";
+      });
+    }
+
+    function toggleLanguage() {
+      window.location.href = "index.html"; // Redirect to English
     }
 
     function goToDeveloperPage() {
       window.location.href = "developeramharic.html";
     }
-
-    // Handle clicking on circular food image
-// After
-const foodImages = document.querySelectorAll('.food-image');
-foodImages.forEach(imageContainer => {
-  imageContainer.addEventListener('click', function (event) {
-    event.stopPropagation();
-    
-    // Grabs the source of the actual image you clicked
-    const imgTag = imageContainer.querySelector('img');
-    const imageUrl = imgTag ? imgTag.src : "";
-
-    if (imageUrl) {
-      window.location.href = `indexamharic2.html?image=${encodeURIComponent(imageUrl)}`;
-    }
-  });
-});
-
-    // Search functionality
-    const searchInput = document.getElementById('searchInput');
-    const foodItems = document.querySelectorAll('.item');
-
-    searchInput.addEventListener('input', function () {
-      const searchTerm = searchInput.value.toLowerCase().trim();
-
-      foodItems.forEach(item => {
-        const foodName = item.getAttribute('data-name').toLowerCase();
-        if (foodName.includes(searchTerm)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-
-    // Toggle between English and Amharic
-    function toggleLanguage() {
-      const languageText = document.getElementById("language-text");
-
-      if (languageText.innerText === "አማርኛ") {
-        languageText.innerText = "English";
-        window.location.href = "indexamharic.html";
-      } else {
-        languageText.innerText = "አማርኛ";
-        window.location.href = "index.html";
-      }
-    }
-    function goToDeveloperPage() {
-    window.location.href = "developeramharic.html";
-  }
   </script>
-
 </body>
 </html>
