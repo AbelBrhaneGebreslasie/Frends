@@ -1,31 +1,29 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Add this for mobile scaling -->
+  <meta charset="UTF-8">
   <title>Dish Detail</title>
-  <!-- Link to the favicon (icon displayed in browser tab) -->
-  <link rel="icon" href="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/Ab_All_Logo.png" type="image/png">
 
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100vh;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
-    }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Keep the image container centered */
-      padding-top: 2.5vh;
-      background: linear-gradient(135deg, white, rgb(3, 189, 252));
-    }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  background: linear-gradient(135deg, white, rgb(3, 189, 252));
+}
 
     .image-container {
       width: 60vw;
@@ -40,7 +38,6 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      margin-bottom: 2rem;  /* Added: Margin for spacing */
     }
 
     .image-container img {
@@ -50,15 +47,35 @@
       border-radius: 50%;
     }
 
-    li {
-      margin-bottom: 0.625rem;
+    h2 {
+      margin: 20px 0 10px 0;
+      font-size: 2rem;
+      color: #003366;
+      text-align: center;
     }
+
+    ul {
+      list-style-type: disc;
+      font-size: 1.2rem;
+      color: #000;
+      width: 90%;
+      max-width: 600px;
+      padding-left: 20px;
+      margin: 0 auto 30px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
 
     @media (max-width: 768px) {
       .image-container {
         width: 70vw;
         height: 70vw;
       }
+
+
       ul {
         font-size: 1rem;
         padding-left: 16px;
@@ -71,8 +88,8 @@
         height: 80vw;
       }
 
-      h4 {
-        font-size: 1.2rem;
+      h2 {
+        font-size: 1.4vm;
       }
 
       ul {
@@ -80,74 +97,64 @@
       }
     }
 
-    /* Desktop-specific refinements */
-    @media (min-width: 768px) {
-      h4 {
-        font-size: 2rem;
-      }
 
-      ul {
-        font-size: 1.2rem;
-        padding-left: 1.25rem;
-      }
-    }
 
-  
 
-  
-
-  
+/* Image container should be more responsive */
 
 
 
 
 
+ul {
+  list-style-type: disc;
+  font-size: 4vw;
+  color: #000;
+  width: 90%;
+  max-width: 600px;
+  padding-left: 5vw;
+  margin: 0 auto 30px;
+}
 
-/* Align the ingredients list to the left */
-.ingredients-container {
-      display: flex;
-      justify-content: flex-start; /* Align list container to the left */
-      width: 100%;
-      padding-left: 6.25vw;
-    }
+li {
+  margin-bottom: 10px;
+}
 
-  /* Style for Back Button */
-  .back-text {
-      padding: 0.75rem 1.5rem;
-      background-color: #003366;
-      color: white;
-      border-radius: 0.5rem;
-      font-size: 2rem;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      display: inline-block;
-      text-align: center;
-      margin: 1.25rem auto;
-    }
 
-    .back-text:hover {
-      background-color: #0055aa;
-    }
+/* Desktop-specific refinements */
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
 
-    ul {
-      list-style-type: disc;
-      font-size: 1.3rem;
-      color: #000;
-      width: 90%;
-      max-width: 600px;
-      padding-left: 1.25rem;
-      margin: 0 auto 1.875rem;
-      text-align: left; 
-    }
+  ul {
+    font-size: 1.2rem;
+    padding-left: 20px;
+  }
 
-    h4 {
-      margin: 1.25rem 0 0.625rem 0;
-      font-size: 3rem;
-      color: #003366;
-      text-align: left; 
-      padding-left: 0.1vw;   /* Added: Consistent padding with list */
-    }
+
+}
+
+
+.back-text {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 1.2rem;
+  color: white;
+ /* font-weight: bold;*/
+  cursor: pointer;
+  background-color: #003366;
+  border-radius: 8px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.back-text:hover {
+  background-color: #003366;
+}
 
   </style>
 
@@ -155,26 +162,25 @@
 <body>
 
   <!-- Image Container -->
-
   <div class="image-container">
     <img id="dish-image" src="" alt="Food Image">
   </div>
 
   <!-- Ingredients Header -->
-
-  <h4><u>Ingredients</u></h4>
-
-  <!-- Ingredients List (Aligned to Left) -->
+  <h2>Ingredients:</h2>
 
   <div class="ingredients-container">
+ 
+
     <ul id="ingredients-list">
       <!-- Ingredients will be dynamically injected here -->
     </ul>
   </div>
 
   <!-- Red "Back to Home" Container -->
+  <div class="back-text" onclick="goBackHome()">&lt; Back</div>
 
-  <div class="back-text" onclick="goBackHome()">Back to Home</div>
+
 
   <script src="amharic.js"></script>
 
@@ -194,8 +200,7 @@
       "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/sss.jpg": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
       "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/tt.jpg": ["Eggs", "Milk", "Cheese", "Salt", "Pepper"],
       "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/ggg.jpg": ["Flour", "Milk", "Eggs", "Syrup"],
-      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rrr.jpg": ["Banana", "Sugar", "Honey", "Cinnamon"], 
-      "https://via.placeholder.com/300": ["Ingredient 1", "Ingredient 2"]
+      "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rrr.jpg": ["Banana", "Sugar", "Honey", "Cinnamon"],     "https://via.placeholder.com/300": ["Ingredient 1", "Ingredient 2"]
     };
 
     // Get image URL from query parameters
@@ -215,6 +220,8 @@
         listContainer.appendChild(li);
       });
     }
+
+    
 
     // Function to go back to the home page
     function goBackHome() {
