@@ -4,49 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hotel Food Menu</title>
-  <!-- Link to the favicon (icon displayed in browser tab) -->
   <link rel="icon" href="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/Ab_All.jpg" type="image/png">
-  
   <link rel="stylesheet" href="style.css" />
-   <!-- Favicon -->
-  <div class="top-center-image">
-    <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/uu.jpg" alt="Profile Image">
-  </div>
-    
+  
   <style>
-    /* Styling for the language containers */
-/* Styling for the language containers */
-.language-selector-container {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  gap: 10px;
-}
+    .language-selector-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      gap: 10px;
+    }
 
-.language-selector {
-  /* background-color: white;*/
-  border-radius: 5px;
-  padding: 5px;
-  cursor: pointer;
-  z-index: 100;
-  font-size: 16px;
-}
+    .language-selector {
+      border-radius: 5px;
+      padding: 5px;
+      cursor: pointer;
+      z-index: 100;
+      font-size: 16px;
+    }
 
-/* Green background for Amharic */
-.language-selector.amaric {
-  /*background-color:green*/
-  color: black;
-}
+    .language-selector.amaric { color: black; }
+    .language-selector.english { background-color: white; color: black; }
 
-/* Red background for English */
-.language-selector.english {
- background-color:white;
-  color: black;
-}
-
-
-    /* Developer Button */
     .developer-container {
       position: absolute;
       top: 10px;
@@ -63,347 +43,192 @@
       z-index: 101;
     }
 
-    /* Adjust Welcome Title */
-    h1 {
-      margin-top: 0px; /* Add space below the buttons */
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 0px;
-    }
+    h1 { text-align: center; font-size: 32px; margin-top: 30px; }
 
-    /* Food Menu Styles */
-    .section {
-      margin: 20px 0;
-    }
+    .section { margin: 20px 0; }
 
     .item {
       display: flex;
       align-items: center;
       margin-bottom: 10px;
       cursor: pointer;
+      transition: background 0.3s;
     }
+    
+    .item:hover { background-color: rgba(255, 255, 255, 0.2); }
 
     .food-image img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
+      margin-right: 15px;
     }
 
     .fasting-label {
       color: white;
       font-weight: bold;
+      background-color: green;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 10px;
     }
 
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
+    .search-container { text-align: center; margin-bottom: 20px; }
+
+    .top-center-image {
+      position: relative;
+      width: 180px;
+      height: 80px;
+      margin: 0 auto;
+      margin-top: 30px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
-    .modal-content {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 500px;
-      width: 80%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      margin-top: 10px;
-    }
-
-    .search-container {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-/* Adjust the gap between the search bar and the breakfast section */
-.search-container {
-  margin-bottom: 20px; /* Adjust the gap between the search bar and the next section */
-}
-
-.section {
-  margin-top: 20px; /* Adjust the space above the breakfast section */
-}
-
-
-    /* Change color of the entire <p> text (including the Fasting label) to red */
-  .item p {
-  color: black; /* Set the color of the whole text to red */
-  
-}
-
-/* Alternatively, you can style just the fasting label with a specific color */
-.fasting-label {
-  color: white; /* Set the color of the fasting label to red */
-  background-color:green
-}
-.top-center-image {
-  position: relative;
-  width: 180px;
-  height: 80px;
-  margin: 0 auto;
-  margin-top: 30px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.top-center-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
+    .top-center-image img { width: 100%; height: 100%; object-fit: cover; }
   </style>
 </head>
 
 <body>
- <!-- Developer Button -->
-<div class="developer-container" onclick="goToDeveloperPage()"></div>
+  <div class="developer-container" onclick="goToDeveloperPage()"></div>
 
-<script>
-  // Navigate to developer page when developer button is clicked
-  function goToDeveloperPage() {
-    console.log('Navigating to developer.html');
-    window.location.href = "developer.html"; // Redirect to the developer page
-  }
-</script>
-
-<!-- Language Selector -->
-<div class="language-selector-container">
-  <div class="language-selector amaric" onclick="toggleLanguage('አማርኛ')">
-    አማርኛ
+  <div class="top-center-image">
+    <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/uu.jpg" alt="Profile Image">
   </div>
-  <div class="language-selector english" onclick="toggleLanguage('English')">
-    English
+
+  <div class="language-selector-container">
+    <div class="language-selector amaric" onclick="toggleLanguage('አማርኛ')">አማርኛ</div>
+    <div class="language-selector english" onclick="toggleLanguage('English')">English</div>
   </div>
-</div>
 
+  <h1>Welcome to Our Hotel Menu</h1>
 
-    <h1>Welcome to Our Hotel Menu</h1>
- 
-    <!-- Search Bar -->
-    <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Search for a dish..." onkeyup="searchMenu()">
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for a dish...">
+  </div>
+
+  <div class="section">
+    <h2>🍳 Breakfast</h2>
+    <div class="item" data-name="Caesar Salad" data-category="breakfast">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg"></div>
+      <p>Caesar Salad - $8 (65 birr)</p>
     </div>
-  
-    <!-- Breakfast Section -->
-    <div class="section">
-      <h2>🍳 Breakfast</h2>
-      <!-- Existing food items -->
-      <div class="item" data-name="Caesar Salad" data-category="breakfast" onclick="showIngredients('Caesar Salad')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg" alt="hi Image">
-        </div>
-        <p>Caesar Salad - $8 (65 birr)</p>
-      </div>
-      <div class="item" data-name="Omelette" data-category="breakfast" onclick="showIngredients('Omelette')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg" alt="oppp Image">
-        </div>
-        <p>Omelette - $5 (22 birr) <span class="fasting-label">Fasting</span></p>
-      </div>
-      <div class="item" data-name="Pancakes" data-category="breakfast" onclick="showIngredients('Pancakes')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg" alt="oppp Image">
-        </div>
-        <p>Pancakes - $4 (45 birr)</p>
-      </div>
-      <!-- New Banana item with the provided image -->
-      <div class="item" data-name="Banana" data-category="breakfast" onclick="showIngredients('Banana')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/qqq.jpg" alt="oppp Image">
-        </div>
-        <p>Banana - $2 (32 birr)</p>
-      </div>
+    <div class="item" data-name="Omelette" data-category="breakfast">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg"></div>
+      <p>Omelette - $5 (22 birr) <span class="fasting-label">Fasting</span></p>
     </div>
-    
-  
-    <!-- Lunch Section -->
-    <div class="section">
-      <h2>🍝 Lunch</h2>
-      <div class="item" data-name="Spaghetti Bolognese" data-category="Lunch" onclick="showIngredients('Spaghetti')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/rr.jpg" alt="oppp Image">
-        </div>
-        <p>Spaghetti Bolognese - $10 (38 birr)</p>
-      </div>
-      <div class="item" data-name="Grilled Chicken" data-category="Lunch" onclick="showIngredients('Grilled Chicken')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/uu.jpg" alt="oppp Image">
-        </div>
-        <p>Grilled Chicken - $12 (45 birr)</p>
-      </div>
+    <div class="item" data-name="Pancakes" data-category="breakfast">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg"></div>
+      <p>Pancakes - $4 (45 birr)</p>
     </div>
-    <!-- Dinner Section -->
-    <div class="section">
-      <h2>🍲 Dinner</h2>
-      <div class="item" data-name="Steak" data-category="Dinner" onclick="showIngredients('Steak')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/hhh.jpg" alt="oppp Image">
-        </div>
-        <p>Steak - $18 (55 birr)</p>
-      </div>
-      <div class="item" data-name="Salmon" data-category="Dinner" onclick="showIngredients('Salmon')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/pp.jpg" alt="oppp Image">
-        </div>
-        <p>Salmon - $16 (25 birr)</p>
-      </div>
+    <div class="item" data-name="Banana" data-category="breakfast">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/qqq.jpg"></div>
+      <p>Banana - $2 (32 birr)</p>
     </div>
-  
-    
-    <!-- Drinks Section -->
-    <div class="section">
-      <h2>☕ Drinks</h2>
-      <div class="item" data-name="Coffee" data-category="Drinks" onclick="showIngredients('Coffee')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/sss.jpg" alt="oppp Image">
-        </div>
-        <p>Coffee - $3 (12 birr)</p>
-      </div>
-      <div class="item" data-name="Orange Juice" data-category="Drinks" onclick="showIngredients('Orange Juice')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/tt.jpg" alt="oppp Image">
-        </div>
-        <p>Orange Juice - $4 (51 birr)</p>
-      </div>
+  </div>
+
+  <div class="section">
+    <h2>🍝 Lunch</h2>
+    <div class="item" data-name="Spaghetti Bolognese" data-category="lunch">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rr.jpg"></div>
+      <p>Spaghetti Bolognese - $10 (38 birr)</p>
     </div>
-    <!-- Desserts Section -->
-    <div class="section">
-      <h2>🍰 Desserts</h2>
-      <div class="item" data-name="Chocolate Cake" data-category="Desserts" onclick="showIngredients('Chocolate Cake')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/ggg.jpg" alt="oppp Image">
-        </div>
-        <p>Chocolate Cake - $6 (35 birr)</p>
-      </div>
-      <div class="item" data-name="Ice Cream" data-category="Desserts" onclick="showIngredients('Ice Cream')">
-        <div class="food-image">
-          <img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main//image/rrr.jpg" alt="oppp Image">
-        </div>
-        <p>Ice Cream - $5 (65 birr)</p>
-      </div>
+    <div class="item" data-name="Grilled Chicken" data-category="lunch">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/uu.jpg"></div>
+      <p>Grilled Chicken - $12 (45 birr)</p>
     </div>
-  
-    <!-- Modal -->
-    <div id="modal" class="modal" onclick="closeModal()">
-      <div class="modal-content" onclick="event.stopPropagation()">
-        <h2 id="dish-name"></h2>
-        <p id="ingredients-text"></p>
-        <div id="ingredients-images" class="image-container"></div>
-      </div>
+  </div>
+
+  <div class="section">
+    <h2>🍲 Dinner</h2>
+    <div class="item" data-name="Steak" data-category="dinner">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hhh.jpg"></div>
+      <p>Steak - $18 (55 birr)</p>
     </div>
-    <script>
-      // Toggle between English and Amharic when clicked
-      function toggleLanguage(language) {
-        // Check for debugging to see if the function is called correctly
-        console.log("Selected language: ", language);
-    
-        const languageText = document.getElementById("language-text");
-    
-        if (language === 'አማርኛ') {
-          console.log("Navigating to indexamharic.html"); // Debugging output
-          window.location.href = "indexamharic.html"; // Navigate to indexamharic.html when clicked on "አማርኛ"
-        } else {
-          console.log("Navigating to index.html"); // Debugging output
-          window.location.href = "index.html"; // Navigate to index.html when clicked on "English"
-        }
+    <div class="item" data-name="Salmon" data-category="dinner">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/pp.jpg"></div>
+      <p>Salmon - $16 (25 birr)</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>☕ Drinks</h2>
+    <div class="item" data-name="Coffee" data-category="drinks">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/sss.jpg"></div>
+      <p>Coffee - $3 (12 birr)</p>
+    </div>
+    <div class="item" data-name="Orange Juice" data-category="drinks">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/tt.jpg"></div>
+      <p>Orange Juice - $4 (51 birr)</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🍰 Desserts</h2>
+    <div class="item" data-name="Chocolate Cake" data-category="desserts">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/ggg.jpg"></div>
+      <p>Chocolate Cake - $6 (35 birr)</p>
+    </div>
+    <div class="item" data-name="Ice Cream" data-category="desserts">
+      <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rrr.jpg"></div>
+      <p>Ice Cream - $5 (65 birr)</p>
+    </div>
+  </div>
+
+  <script>
+    function goToDeveloperPage() { window.location.href = "developer.html"; }
+
+    function toggleLanguage(language) {
+      if (language === 'አማርኛ') {
+        window.location.href = "indexamharic.html";
+      } else {
+        window.location.href = "index.html";
       }
-    
-      // Handle clicking on circular food image
-      const foodImages = document.querySelectorAll('.food-image');
-      foodImages.forEach(image => {
-        image.addEventListener('click', function (event) {
-          event.stopPropagation(); // Don't trigger body click
-          const foodName = image.parentElement.getAttribute("data-name");
-          let imageUrl = "";
-    
-          switch (foodName) {
-            case "Caesar Salad":
-              imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg";
-              break;
-            case "Omelette":
-              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg";
-              break;
-            case "Pancakes":
-              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg";
-              break;
-            case "Banana":
-              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/qqq.jpg";
-              break;
-
-
-            case "Spaghetti Bolognese":
-              imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/rr.jpg";
-              break;
-            case "Grilled Chicken":
-              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/uu.jpg";
-              break;
-            case "Steak":
-              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hhh.jpg";
-              break;
-            case "Salmon":/*ኣብዚ ስማት space ከይትሓድግ ኣብነት "Salmon" ዝነበረ "Salmon " ተጌርካዮ ኣይሰርሐልካን ። */
-              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/pp.jpg";
-              break;
-
-
-              case "Coffee":
-              imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/sss.jpg";
-              break;
-            case "Orange Juice":
-              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/tt.jpg";
-              break;
-            case "Chocolate Cake":
-              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/ggg.jpg";
-              break;
-            case "Ice Cream":
-              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rrr.jpg";
-              break;
-            
-            default:
-              imageUrl = "https://via.placeholder.com/300";
-          }
-    
-          // Always navigate to index2.html when clicked
-          console.log("Navigating to index2.html with image URL: ", imageUrl); // Debugging output
-          window.location.href = `index2.html?image=${encodeURIComponent(imageUrl)}`;
-        });
-      });
-    
-      // Search functionality
- const searchInput = document.getElementById('searchInput'); // Get the search input field
-const foodItems = document.querySelectorAll('.item'); // All food items
-
-// Event listener to filter items as user types
-searchInput.addEventListener('input', function () {
-  const searchTerm = searchInput.value.toLowerCase().trim(); // Get the search query and make it lowercase
-
-  foodItems.forEach(item => {
-    const foodName = item.getAttribute('data-name').toLowerCase(); // Get the food name and make it lowercase
-    const foodCategory = item.getAttribute('data-category') ? item.getAttribute('data-category').toLowerCase() : ""; // Get the food category (breakfast, lunch, etc.)
-
-    // Show item if food name or category includes the search term
-    if (foodName.includes(searchTerm) || foodCategory.includes(searchTerm)) {
-      item.style.display = 'block'; // Show the item if it matches the search term
-    } else {
-      item.style.display = 'none'; // Hide the item if it doesn't match the search term
     }
-  });
-});
-    </script>
-    
-    
+
+    // Combined Click Handling for All Items
+    const allItems = document.querySelectorAll('.item');
+    allItems.forEach(item => {
+      item.addEventListener('click', function () {
+        const foodName = this.getAttribute("data-name");
+        let imageUrl = "";
+
+        switch (foodName) {
+          case "Caesar Salad": imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg"; break;
+          case "Omelette": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg"; break;
+          case "Pancakes": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg"; break;
+          case "Banana": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/qqq.jpg"; break;
+          case "Spaghetti Bolognese": imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/rr.jpg"; break;
+          case "Grilled Chicken": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/uu.jpg"; break;
+          case "Steak": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hhh.jpg"; break;
+          case "Salmon": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/pp.jpg"; break;
+          case "Coffee": imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/sss.jpg"; break;
+          case "Orange Juice": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/tt.jpg"; break;
+          case "Chocolate Cake": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/ggg.jpg"; break;
+          case "Ice Cream": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rrr.jpg"; break;
+          default: imageUrl = "https://via.placeholder.com/300";
+        }
+
+        window.location.href = `index2.html?image=${encodeURIComponent(imageUrl)}`;
+      });
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', function () {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      allItems.forEach(item => {
+        const name = item.getAttribute('data-name').toLowerCase();
+        const category = item.getAttribute('data-category').toLowerCase();
+        if (name.includes(searchTerm) || category.includes(searchTerm)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
