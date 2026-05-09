@@ -111,10 +111,10 @@
 
   <div class="section">
     <h2>🍳 Breakfast</h2>
-    <div class="item" data-name="Caesar Salad" data-category="breakfast">
-      <div class="food-image"><img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg"></div>
-      <p>Sausage Spaghetti - 650 ብር ($4.16)</p>
-    </div>
+<div class="item" data-name="Sausage Spaghetti" data-img="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg" data-category="breakfast">
+   <div class="food-image"><img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg"></div>
+   <p>Sausage Spaghetti - 650 ብር ($4.16)</p>
+</div>
     <div class="item" data-name="Omelette" data-category="breakfast">
       <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg"></div>
       <p>Triple Cheeseburger - 1,550 ብር ($9.93)
@@ -190,30 +190,16 @@
 
     // Combined Click Handling for All Items
     const allItems = document.querySelectorAll('.item');
-    allItems.forEach(item => {
-      item.addEventListener('click', function () {
-        const foodName = this.getAttribute("data-name");
-        let imageUrl = "";
+allItems.forEach(item => {
+  item.addEventListener('click', function () {
+    // This grabs the URL directly from the 'data-img' attribute you added
+    const imageUrl = this.getAttribute('data-img');
 
-        switch (foodName) {
-          case "Caesar Salad": imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg"; break;
-          case "Omelette": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg"; break;
-          case "Pancakes": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg"; break;
-          case "Banana": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/qqq.jpg"; break;
-          case "Spaghetti Bolognese": imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/rr.jpg"; break;
-          case "Grilled Chicken": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/uu.jpg"; break;
-          case "Steak": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hhh.jpg"; break;
-          case "Salmon": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/pp.jpg"; break;
-          case "Coffee": imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/sss.jpg"; break;
-          case "Orange Juice": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/tt.jpg"; break;
-          case "Chocolate Cake": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/ggg.jpg"; break;
-          case "Ice Cream": imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rrr.jpg"; break;
-          default: imageUrl = "https://via.placeholder.com/300";
-        }
-
-        window.location.href = `index2.html?image=${encodeURIComponent(imageUrl)}`;
-      });
-    });
+    if (imageUrl) {
+      window.location.href = `index2.html?image=${encodeURIComponent(imageUrl)}`;
+    }
+  });
+});
 
     // Search functionality
     const searchInput = document.getElementById('searchInput');
