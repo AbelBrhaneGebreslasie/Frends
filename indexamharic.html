@@ -55,11 +55,15 @@
       text-align: center;
     }
 
-    h1 { font-size: 28px; margin-bottom: 10px; }
+h1 { font-size: 28px; margin-bottom: 10px; }
 
-    .section { margin: 20px 0; }
+/* Updated this part below */
+.section { 
+   margin: 20px 0; 
+   display: block; /* Ensure sections behave correctly during search */
+}
 
-    .item {
+.item {
       display: flex;
       align-items: center;
       margin-bottom: 12px;
@@ -116,7 +120,7 @@
     <h2>🍳 ቁርስ</h2>
     <div class="item" data-name="እንቁላል" data-category="ቁርስ">
       <div class="food-image"><img src="https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg"></div>
-      <p><strong>ሳውሴጅ ስፓጌቲ -</strong> $8 (65 ብር)
+      <p><strong>ሳውሴጅ ስፓጌቲ -</strong> $8 (65 ብር)</strong></p>
     </div>
     <div class="item" data-name="በርገር" data-category="ቁርስ">
       <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg"></div>
@@ -124,7 +128,7 @@
     </div>
     <div class="item" data-name="ፓስታ" data-category="ቁርስ">
       <div class="food-image"><img src="https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg"></div>
-      <p><strong>ፓስታ -</strong> $8 (65 ብር)</p> <span class="fasting-label">የ ፆም</span></p>
+      <p><strong>ፓስታ -</strong> $8 (65 ብር) <span class="fasting-label">የ ፆም</span></p>
     </div>
   </div>
 
