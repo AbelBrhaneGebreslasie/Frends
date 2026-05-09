@@ -184,68 +184,105 @@
 </div>
   </div>
 
-  <script>
-    function goToDeveloperPage() { window.location.href = "developer.html"; }
-
-    function toggleLanguage(language) {
-      if (language === 'አማርኛ') {
-        window.location.href = "indexamharic.html";
-      } else {
-        window.location.href = "index.html";
+<script>
+      // Toggle between English and Amharic when clicked
+      function toggleLanguage(language) {
+        // Check for debugging to see if the function is called correctly
+        console.log("Selected language: ", language);
+    
+        const languageText = document.getElementById("language-text");
+    
+        if (language === 'አማርኛ') {
+          console.log("Navigating to indexamharic.html"); // Debugging output
+          window.location.href = "indexamharic.html"; // Navigate to indexamharic.html when clicked on "አማርኛ"
+        } else {
+          console.log("Navigating to index.html"); // Debugging output
+          window.location.href = "index.html"; // Navigate to index.html when clicked on "English"
+        }
       }
-    }
+    
+      // Handle clicking on circular food image
+      const foodImages = document.querySelectorAll('.food-image');
+      foodImages.forEach(image => {
+        image.addEventListener('click', function (event) {
+          event.stopPropagation(); // Don't trigger body click
+          const foodName = image.parentElement.getAttribute("data-name");
+          let imageUrl = "";
+    
+          switch (foodName) {
+            case "Caesar Salad":
+              imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/ff.jpg";
+              break;
+            case "Omelette":
+              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hh.jpg";
+              break;
+            case "Pancakes":
+              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/kk.jpg";
+              break;
+            case "Banana":
+              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/qqq.jpg";
+              break;
 
-    // Combined Click Handling for All Items
-    const allItems = document.querySelectorAll('.item');
-allItems.forEach(item => {
-  item.addEventListener('click', function () {
-    // This grabs the URL directly from the 'data-img' attribute you added
-    const imageUrl = this.getAttribute('data-img');
 
-    if (imageUrl) {
-      window.location.href = `index2.html?image=${encodeURIComponent(imageUrl)}`;
-    }
-  });
-});
+            case "Spaghetti Bolognese":
+              imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/rr.jpg";
+              break;
+            case "Grilled Chicken":
+              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/uu.jpg";
+              break;
+            case "Steak":
+              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/hhh.jpg";
+              break;
+            case "Salmon":/*ኣብዚ ስማት space ከይትሓድግ ኣብነት "Salmon" ዝነበረ "Salmon " ተጌርካዮ ኣይሰርሐልካን ። */
+              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/pp.jpg";
+              break;
 
-    // Search functionality
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', function () {
-      const searchTerm = searchInput.value.toLowerCase().trim();
-      allItems.forEach(item => {
-        const name = item.getAttribute('data-name').toLowerCase();
-        const category = item.getAttribute('data-category').toLowerCase();
-// Updated Search Functionality
-const searchInput = document.getElementById('searchInput');
-const sections = document.querySelectorAll('.section'); // Get all sections
 
+              case "Coffee":
+              imageUrl = "https://raw.githubusercontent.com/abelbrhanegebreslasie/Frends/main/image/sss.jpg";
+              break;
+            case "Orange Juice":
+              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/tt.jpg";
+              break;
+            case "Chocolate Cake":
+              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/ggg.jpg";
+              break;
+            case "Ice Cream":
+              imageUrl = "https://raw.githubusercontent.com/AbelBrhaneGebreslasie/Frends/main/image/rrr.jpg";
+              break;
+            
+            default:
+              imageUrl = "https://via.placeholder.com/300";
+          }
+    
+          // Always navigate to index2.html when clicked
+          console.log("Navigating to index2.html with image URL: ", imageUrl); // Debugging output
+          window.location.href = `index2.html?image=${encodeURIComponent(imageUrl)}`;
+        });
+      });
+    
+      // Search functionality
+ const searchInput = document.getElementById('searchInput'); // Get the search input field
+const foodItems = document.querySelectorAll('.item'); // All food items
+
+// Event listener to filter items as user types
 searchInput.addEventListener('input', function () {
-  const searchTerm = searchInput.value.toLowerCase().trim();
+  const searchTerm = searchInput.value.toLowerCase().trim(); // Get the search query and make it lowercase
 
-  sections.forEach(section => {
-    const sectionItems = section.querySelectorAll('.item');
-    let hasVisibleItems = false;
+  foodItems.forEach(item => {
+    const foodName = item.getAttribute('data-name').toLowerCase(); // Get the food name and make it lowercase
+    const foodCategory = item.getAttribute('data-category') ? item.getAttribute('data-category').toLowerCase() : ""; // Get the food category (breakfast, lunch, etc.)
 
-    sectionItems.forEach(item => {
-      const name = item.getAttribute('data-name').toLowerCase();
-      const category = item.getAttribute('data-category').toLowerCase();
-      
-      if (name.includes(searchTerm) || category.includes(searchTerm)) {
-        item.style.display = 'flex';
-        hasVisibleItems = true; // We found a match in this section
-      } else {
-        item.style.display = 'none';
-      }
-    });
-
-    // Hide the whole section (including the <h2> title) if nothing matches
-    if (hasVisibleItems) {
-      section.style.display = 'block';
+    // Show item if food name or category includes the search term
+    if (foodName.includes(searchTerm) || foodCategory.includes(searchTerm)) {
+      item.style.display = 'block'; // Show the item if it matches the search term
     } else {
-      section.style.display = 'none';
+      item.style.display = 'none'; // Hide the item if it doesn't match the search term
     }
   });
 });
-  </script>
+    </script>
+    
+    
 </body>
 </html>
