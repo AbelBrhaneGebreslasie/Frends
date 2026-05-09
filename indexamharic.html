@@ -194,20 +194,37 @@ h1 { font-size: 28px; margin-bottom: 10px; }
       });
     });
 
-    // Search functionality
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', function () {
-      const searchTerm = searchInput.value.toLowerCase().trim();
-      allItems.forEach(item => {
-        const name = item.getAttribute('data-name').toLowerCase();
-        const category = item.getAttribute('data-category').toLowerCase();
-        if (name.includes(searchTerm) || category.includes(searchTerm)) {
-          item.style.display = 'flex';
-        } else {
-          item.style.display = 'none';
-        }
-      });
+// Search functionality
+const searchInput = document.getElementById('searchInput');
+const sections = document.querySelectorAll('.section'); // You need to select sections too
+
+searchInput.addEventListener('input', function () {
+  const searchTerm = searchInput.value.toLowerCase().trim();
+
+  sections.forEach(section => {
+    const itemsInSection = section.querySelectorAll('.item');
+    let hasVisibleItems = false; // Track if anything matches in this section
+
+    itemsInSection.forEach(item => {
+      const name = item.getAttribute('data-name').toLowerCase();
+      const category = item.getAttribute('data-category').toLowerCase();
+      
+      if (name.includes(searchTerm) || category.includes(searchTerm)) {
+        item.style.display = 'flex';
+        hasVisibleItems = true; 
+      } else {
+        item.style.display = 'none';
+      }
     });
+
+    // MISSING PART: Hide the whole section title if no items match
+    if (hasVisibleItems) {
+      section.style.display = 'block';
+    } else {
+      section.style.display = 'none';
+    }
+  });
+});
   </script>
 </body>
 </html>
